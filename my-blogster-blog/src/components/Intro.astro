@@ -1,0 +1,62 @@
+---
+---
+
+<section class="mb-8">
+  <div class="mb-6">
+    <!--<h1
+      class="font-bold text-text-heading text-center text-4xl md:text-5xl pt-4"
+    >
+      <span
+        class="
+            bg-gradient-to-b bg-no-repeat bg-bottom bg-[length:100%_50%]
+            from-orange-200 to-orange-500 dark:from-primary-blue dark:to-primary-blue
+        "
+      >
+       The Tractor Store
+      </span>
+    </h1>-->
+    <h1 class="font-bold text-text-heading text-center text-4xl md:text-5xl pt-4 pb-2 rough_highlight">
+      The Tractor Store
+    </h1>
+    <p class="text-center">a non-trivial micro frontends example project</p>
+  </div>
+  <div>
+    <p>
+      The Tractor Store is a template to experiment with micro frontend architecture. Goal is to create a real world application where developers can experiment with different integration techniques.
+
+      The idea is similar to TodoMVC or Movies, but with a <span class="rough_highlight">focus on micro frontends.</span>
+
+    </p>
+  </div>
+  <script type="module">
+    import { annotate } from 'https://unpkg.com/rough-notation?module';
+
+    let underlineList = document.querySelectorAll('.rough_underline');
+    let circleList = document.querySelectorAll('.rough_circle');
+    let boxList = document.querySelectorAll('.rough_box');
+    let highlightList = document.querySelectorAll('.rough_highlight');
+    let bracketList = document.querySelectorAll('.rough_bracket');
+
+    for (let i = 0; i < underlineList.length; i++)  {
+      const roughUnderlines = annotate (underlineList[i], { type: 'underline', color: '#F6CCAD', iterations: 2});
+      roughUnderlines.show();
+    }
+    for (let i = 0; i < circleList.length; i++)  {
+      const roughCircles = annotate (circleList[i], { type: 'circle', color: 'red', padding: 10 });
+      roughCircles.show();
+    }
+    for (let i = 0; i < boxList.length; i++)  {
+      const roughBoxes = annotate (boxList[i], { type: 'box', color: '#F6CCAD' });
+      roughBoxes.show();
+    }
+    for (let i = 0; i < highlightList.length; i++)  {
+      const roughHighlights = annotate (highlightList[i], { type: 'highlight', color: '#F6CCAD', iterations: 1, multiline: true });
+      roughHighlights.show();
+    }
+    for (let i = 0; i < bracketList.length; i++)  {
+      const roughBrackets = annotate (bracketList[i], { type: 'bracket', color: '#F6CCAD', padding: [2, 10], brackets: ['left', 'right'], strokeWidth: 3 });
+      roughBrackets.show();
+    }
+
+  </script>
+</section>
