@@ -216,5 +216,9 @@
         fill: #F6CCAD;
     }
 
+    .svg-dark {
+        fill: #ff5a55;
+    }
+
     /* ------ REUSABLE UTILS - END ------ */
 }
