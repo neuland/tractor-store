@@ -15,10 +15,10 @@
        The Tractor Store
       </span>
     </h1>-->
-    <h1 class="font-bold text-text-heading text-center text-4xl md:text-5xl pt-4 pb-2 w-fit m-auto rough_underline">
+    <h1 class="pt-4 w-fit m-auto font-bold text-text-heading text-center text-4xl md:text-5xl rough_underline">
       The Tractor Store
     </h1>
-    <p class="text-center">a non-trivial micro frontends example project</p>
+    <p class="pt-2 text-center">a non-trivial micro frontends example project</p>
   </div>
   <div>
     <p>
@@ -36,20 +36,22 @@
     let highlightList = document.querySelectorAll('.rough_highlight');
     let bracketList = document.querySelectorAll('.rough_bracket');
 
+    // TODO: add dark mode colors
+
     for (let i = 0; i < underlineList.length; i++)  {
-      const roughUnderlines = annotate (underlineList[i], { type: 'underline', color: '#ff5a55', iterations: 2});
+      const roughUnderlines = annotate (underlineList[i], { type: 'underline', color: '#ffde54', iterations: 2});
       roughUnderlines.show();
     }
     for (let i = 0; i < boxList.length; i++)  {
-      const roughBoxes = annotate (boxList[i], { type: 'box', color: '#ff5a55' });
+      const roughBoxes = annotate (boxList[i], { type: 'box', color: '#ffde54', iterations: 1, strokeWidth: 1, padding: [1] });
       roughBoxes.show();
     }
     for (let i = 0; i < highlightList.length; i++)  {
-      const roughHighlights = annotate (highlightList[i], { type: 'highlight', color: '#ff5a55', iterations: 1, multiline: true });
+      const roughHighlights = annotate (highlightList[i], { type: 'highlight', color: '#ffde54', iterations: 1, multiline: true });
       roughHighlights.show();
     }
     for (let i = 0; i < bracketList.length; i++)  {
-      const roughBrackets = annotate (bracketList[i], { type: 'bracket', color: '#ff5a55', padding: [2, 10], brackets: ['left', 'right'], strokeWidth: 3 });
+      const roughBrackets = annotate (bracketList[i], { type: 'bracket', color: '#ffde54', padding: [2, 10], brackets: ['left', 'right'], strokeWidth: 3 });
       roughBrackets.show();
     }
 
