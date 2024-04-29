@@ -31,14 +31,65 @@
   <script type="module">
     import { annotate } from 'https://unpkg.com/rough-notation?module';
 
-    let underlineList = document.querySelectorAll('.rough_underline');
-    let boxList = document.querySelectorAll('.rough_box');
-    let highlightList = document.querySelectorAll('.rough_highlight');
-    let bracketList = document.querySelectorAll('.rough_bracket');
+    let underlineList
+    //let boxList = document.querySelectorAll('.rough_box');
+    let highlightList
+    //let bracketList = document.querySelectorAll('.rough_bracket');
+
+    const observer = new IntersectionObserver(handleIntersection, { threshold: [1] });
+    let annotations;
+
+
+    document.addEventListener('DOMContentLoaded', function () {
+      underlineList = Array.from(document.querySelectorAll('.rough_underline'))
+          .map((element, i) => {
+            const id = i.toString();
+            const roughUnderlines = annotate(element, {
+              type: 'underline',
+              color: '#ffde54',
+              iterations: 2,
+              animationDuration: 2000,
+              animationDelay: 5000,
+            });
+            element.dataset.annotateId = id;
+            observer.observe(element);
+            return { id, roughUnderlines };
+          });
+      highlightList = Array.from(document.querySelectorAll('.rough_highlight'))
+          .map((element, i) => {
+            const id = i.toString();
+            const roughHighlights = annotate(element, {
+              type: 'highlight',
+              color: '#ffde54',
+              iterations: 1,
+              multiline: true,
+              animationDuration: 2000,
+              animationDelay: 5000,
+            });
+            element.dataset.annotateId = id;
+            observer.observe(element);
+            return { id, roughHighlights };
+          });
+    });
+
+
+    function handleIntersection(entries, observer) {
+      entries
+          .filter((entry) => entry.isIntersecting)
+          .forEach((entry) => {
+            const element = entry.target;
+            const roughUnderlines = underlineList
+                .filter(({ id }) => id === element.dataset.annotateId)[0].roughUnderlines;
+            const roughHighlights = highlightList
+                .filter(({ id }) => id === element.dataset.annotateId)[0].roughHighlights;
+            roughUnderlines.show();
+            roughHighlights.show();
+          });
+    }
 
     // TODO: add dark mode colors
 
-    for (let i = 0; i < underlineList.length; i++)  {
+    /*for (let i = 0; i < underlineList.length; i++)  {
       const roughUnderlines = annotate (underlineList[i], { type: 'underline', color: '#ffde54', iterations: 2});
       roughUnderlines.show();
     }
@@ -53,7 +104,7 @@
     for (let i = 0; i < bracketList.length; i++)  {
       const roughBrackets = annotate (bracketList[i], { type: 'bracket', color: '#ffde54', padding: [2, 10], brackets: ['left', 'right'], strokeWidth: 3 });
       roughBrackets.show();
-    }
+    }*/
 
   </script>
 </section>
