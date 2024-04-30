@@ -15,7 +15,7 @@
        The Tractor Store
       </span>
     </h1>-->
-    <h1 class="pt-4 w-fit m-auto font-bold text-text-heading text-center text-4xl md:text-5xl rough_underline">
+    <h1 class="pt-4 w-fit m-auto font-bold text-text-heading text-center text-4xl md:text-5xl" data-annotate="underline">
       The Tractor Store
     </h1>
     <p class="pt-2 text-center">a non-trivial micro frontends example project</p>
@@ -24,87 +24,47 @@
     <p>
       The Tractor Store is a template to experiment with micro frontend architecture. Goal is to create a real world application where developers can experiment with different integration techniques.
 
-      The idea is similar to TodoMVC or Movies, but with a <span class="rough_highlight">focus on micro frontends.</span>
+      The idea is similar to TodoMVC or Movies, but with a <span data-annotate="highlight">focus on micro frontends.</span>
 
     </p>
   </div>
   <script type="module">
     import { annotate } from 'https://unpkg.com/rough-notation?module';
-
-    let underlineList
-    //let boxList = document.querySelectorAll('.rough_box');
-    let highlightList
-    //let bracketList = document.querySelectorAll('.rough_bracket');
-
     const observer = new IntersectionObserver(handleIntersection, { threshold: [1] });
-    let annotations;
 
 
-    document.addEventListener('DOMContentLoaded', function () {
-      underlineList = Array.from(document.querySelectorAll('.rough_underline'))
-          .map((element, i) => {
-            const id = i.toString();
-            const roughUnderlines = annotate(element, {
-              type: 'underline',
-              color: '#ffde54',
-              iterations: 2,
-              animationDuration: 2000,
-              animationDelay: 5000,
-            });
-            element.dataset.annotateId = id;
-            observer.observe(element);
-            return { id, roughUnderlines };
-          });
-      highlightList = Array.from(document.querySelectorAll('.rough_highlight'))
-          .map((element, i) => {
-            const id = i.toString();
-            const roughHighlights = annotate(element, {
-              type: 'highlight',
-              color: '#ffde54',
-              iterations: 1,
-              multiline: true,
-              animationDuration: 2000,
-              animationDelay: 5000,
-            });
-            element.dataset.annotateId = id;
-            observer.observe(element);
-            return { id, roughHighlights };
-          });
-    });
-
+    Array.from(document.querySelectorAll('[data-annotate]'))
+        .forEach ((element) => {
+          observer.observe(element);
+        });
 
     function handleIntersection(entries, observer) {
-      entries
-          .filter((entry) => entry.isIntersecting)
-          .forEach((entry) => {
-            const element = entry.target;
-            const roughUnderlines = underlineList
-                .filter(({ id }) => id === element.dataset.annotateId)[0].roughUnderlines;
-            const roughHighlights = highlightList
-                .filter(({ id }) => id === element.dataset.annotateId)[0].roughHighlights;
-            roughUnderlines.show();
-            roughHighlights.show();
-          });
+      entries.forEach((entry) => {
+        const element = entry.target;
+        console.log(entry.isIntersecting);
+        if (entry.isIntersecting) {
+          showAnnotation(element);
+        }
+      });
+    }
+
+    function showAnnotation(element) {
+      const type = element.getAttribute('data-annotate');
+      if (!type) {
+        return;
+      }
+      annotate(element, {
+        type,
+        color: '#ffde54',
+        iterations: 2,
+        multiline: true,
+        animationDuration: 3000,
+        animationDelay: 5000,
+      }).show();
+      element.removeAttribute('data-annotate');
     }
 
     // TODO: add dark mode colors
-
-    /*for (let i = 0; i < underlineList.length; i++)  {
-      const roughUnderlines = annotate (underlineList[i], { type: 'underline', color: '#ffde54', iterations: 2});
-      roughUnderlines.show();
-    }
-    for (let i = 0; i < boxList.length; i++)  {
-      const roughBoxes = annotate (boxList[i], { type: 'box', color: '#ffde54', iterations: 1, strokeWidth: 1, padding: [1] });
-      roughBoxes.show();
-    }
-    for (let i = 0; i < highlightList.length; i++)  {
-      const roughHighlights = annotate (highlightList[i], { type: 'highlight', color: '#ffde54', iterations: 1, multiline: true });
-      roughHighlights.show();
-    }
-    for (let i = 0; i < bracketList.length; i++)  {
-      const roughBrackets = annotate (bracketList[i], { type: 'bracket', color: '#ffde54', padding: [2, 10], brackets: ['left', 'right'], strokeWidth: 3 });
-      roughBrackets.show();
-    }*/
 
   </script>
 </section>
