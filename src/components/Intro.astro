@@ -41,7 +41,6 @@
     function handleIntersection(entries, observer) {
       entries.forEach((entry) => {
         const element = entry.target;
-        console.log(entry.isIntersecting);
         if (entry.isIntersecting) {
           showAnnotation(element);
         }
@@ -53,9 +52,16 @@
       if (!type) {
         return;
       }
+      let color = '#ffde54'
+      if (document.documentElement.classList.contains("dark")) {
+        color = '#3b82f6'
+        console.log('dark!')
+      } else {
+        console.log('light!')
+      }
       annotate(element, {
         type,
-        color: '#ffde54',
+        color,
         iterations: 2,
         multiline: true,
         animationDuration: 3000,
