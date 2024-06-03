@@ -1,25 +1,29 @@
 ---
-const { title } = Astro.props;
-const { rendering } = Astro.props;
-const { integration } = Astro.props;
-const { lib1 } = Astro.props;
-const { lib2 } = Astro.props;
-const { lib3 } = Astro.props;
 ---
 
-<section class="p-6 border border-slate-300 rounded-lg  bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-red-300 to-white">
-  <p>{title}</p>
-  <div class="flex">
-    <div class="basis-1/3 p-1 border border-slate-300 rounded-lg bg-white">
-      <img src={lib1} typeof="foaf:Image" class="m-auto size-6" />
+<section class="flex pt-4 pb-4 custom_shadow">
+    <div class="basis-1/3">
+      <p class="pb-2 text-xs text-neuland text-center bold">Team Explore</p>
+      <div class="flex">
+          <img src="images/boundaries/home.svg" typeof="foaf:Image" class="size-32 drop-shadow-lg" />
+          <img src="images/boundaries/list.svg" typeof="foaf:Image" class="size-32 drop-shadow-lg" />
+      </div>
     </div>
-    <div class="basis-1/3 p-1 border border-slate-300 rounded-lg bg-white">
-      <img src={lib2} typeof="foaf:Image" class="m-auto size-6" />
+    <div class="basis-1/6">
+      <p class="pb-2 text-xs text-decide text-center bold">Team Decide</p>
+      <img src="images/boundaries/detail.svg" typeof="foaf:Image" class="size-32 drop-shadow-lg" />
     </div>
-    <div class="basis-1/3 p-1 border border-slate-300 rounded-lg bg-white">
-      <img src={lib3} typeof="foaf:Image" class="m-auto size-6" />
+     <div class="basis-1/2">
+      <p class="pb-2 text-xs text-checkout text-center bold">Team Checkout</p>
+      <div class="flex">
+          <img src="images/boundaries/cart.svg" typeof="foaf:Image" class="size-32 drop-shadow-lg" />
+          <img src="images/boundaries/checkout.svg" typeof="foaf:Image" class="size-32 drop-shadow-lg" />
+          <img src="images/boundaries/thankyou.svg" typeof="foaf:Image" class="size-32 drop-shadow-lg" />
+      </div>
     </div>
-  </div>
-  <div class="p-1 border border-slate-300 rounded-lg text-center bg-white">{integration}</div>
-  <p class="p-1 border border-slate-300 rounded-lg text-center bg-white">{rendering}</p>
 </section>
+<style>
+    .custom_shadow {
+        filter: drop-shadow(0px 0px 50px rgba(255, 90, 85, 0.3));
+    }
+</style>

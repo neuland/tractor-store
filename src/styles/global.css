@@ -224,5 +224,16 @@
         fill: transparent;
     }
 
+    .text-neuland {
+        color: #FF5A55;
+    }
+
+    .text-decide {
+        color: #54FF90;
+    }
+    .text-checkout {
+        color: #FFDE54;
+    }
+
     /* ------ REUSABLE UTILS - END ------ */
 }
