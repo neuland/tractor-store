@@ -81,12 +81,11 @@
     }
 
     :root {
-        font-family: theme('fontFamily.body');
+        font-family: theme('fontFamily.body'), sans-serif;
         background-color: theme('colors.bg.body');
         color: theme('colors.text.body');
-        /* base font-size 1px larger for better visibility */
-        font-size: 1.125em;
-        line-height: 1.85;
+        font-size: 20px;
+        line-height: 30px;
         scroll-behavior: smooth;
     }
 
@@ -96,7 +95,7 @@
     h4,
     h5,
     h6 {
-        font-family: theme('fontFamily.heading');
+        font-family: theme('fontFamily.heading'), sans-serif;
     }
 }
 
@@ -213,11 +212,11 @@
     }
 
     .svg-light {
-        fill: #F6CCAD;
+        fill: rgba(0, 0, 0, 0.3);
     }
 
     .svg-dark {
-        fill: #ff5a55;
+        fill: #000000;
     }
 
     .svg-transparent {
