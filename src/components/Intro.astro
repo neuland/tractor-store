@@ -1,7 +1,7 @@
 ---
 ---
 
-<section class="mb-8">
+<section class="mb-20">
   <div class="mb-6">
     <!--<h1
       class="font-bold text-text-heading text-center text-4xl md:text-5xl pt-4"
@@ -15,28 +15,33 @@
        The Tractor Store
       </span>
     </h1>-->
-    <h1 class="pt-4 w-fit m-auto font-bold text-text-heading text-center text-4xl md:text-5xl" data-annotate="underline">
-      The Tractor Store
+    <h1 class="pt-4 m-auto font-bold text-text-heading text-3xl md:text-4xl">
+      <span data-annotate="underline">
+        a non-trivial micro frontends example project
+      </span>
     </h1>
-    <p class="pt-2 text-center">a non-trivial micro frontends example project</p>
   </div>
   <div>
     <p>
-      The Tractor Store is a template to experiment with micro frontend architecture. Goal is to create a real world application where developers can experiment with different integration techniques.
-
-      The idea is similar to TodoMVC or Movies, but with a <span data-annotate="highlight">focus on micro frontends.</span>
-
+      The Tractor Store is a template to experiment with micro frontend
+      architecture. Goal is to create a real world application where developers
+      can experiment with different integration techniques. The idea is similar
+      to TodoMVC or Movies, but with a <span data-annotate="highlight">
+        focus on micro frontends.
+      </span>
     </p>
   </div>
   <script type="module">
-    import { annotate } from 'https://unpkg.com/rough-notation?module';
-    const observer = new IntersectionObserver(handleIntersection, { threshold: [1] });
+    import { annotate } from "https://unpkg.com/rough-notation?module";
+    const observer = new IntersectionObserver(handleIntersection, {
+      threshold: [1],
+    });
 
-
-    Array.from(document.querySelectorAll('[data-annotate]'))
-        .forEach ((element) => {
-          observer.observe(element);
-        });
+    Array.from(document.querySelectorAll("[data-annotate]")).forEach(
+      (element) => {
+        observer.observe(element);
+      }
+    );
 
     function handleIntersection(entries, observer) {
       entries.forEach((entry) => {
@@ -48,13 +53,13 @@
     }
 
     function showAnnotation(element) {
-      const type = element.getAttribute('data-annotate');
+      const type = element.getAttribute("data-annotate");
       if (!type) {
         return;
       }
-      let color = '#ffde54'
+      let color = "#ffde54";
       if (document.documentElement.classList.contains("dark")) {
-        color = '#FF5A55'
+        color = "#FF5A55";
       }
       annotate(element, {
         type,
@@ -64,10 +69,9 @@
         animationDuration: 3000,
         animationDelay: 5000,
       }).show();
-      element.removeAttribute('data-annotate');
+      element.removeAttribute("data-annotate");
     }
 
     // TODO: add dark mode colors
-
   </script>
 </section>
