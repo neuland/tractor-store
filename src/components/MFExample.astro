@@ -16,7 +16,7 @@ const { lib3 } = Astro.props;
 
   <p class="pb-3 font-bold text-xs">{title}</p>
 
-  <div class="elements shadow">
+  <div class="elements c_shadow">
     <div class="element">
       <img src={lib1} typeof="foaf:Image" class="m-auto size-6" />
     </div>
@@ -42,6 +42,7 @@ const { lib3 } = Astro.props;
     overflow: hidden;
   }
   .elements {
+    border-radius: 10px;
     display: grid;
     gap: 0.5rem;
     grid-template:
@@ -61,9 +62,10 @@ const { lib3 } = Astro.props;
     grid-column: span 3;
   }
 
-  .shadow {
+  .c_shadow {
     filter: drop-shadow(-3px -3px 3px rgba(255, 255, 255, 0.4))
-      drop-shadow(1px 2px 2px #edcdcd) drop-shadow(2px 4px 2px #edcdcd)
+      drop-shadow(2px 3px 2px #edcdcd) drop-shadow(3px 6px 4px #edcdcd)
+      drop-shadow(4px 9px 6px #edcdcd)
       drop-shadow(0px 4px 40px rgba(255, 90, 85, 0.3));
     transform: translateZ(0);
   }
