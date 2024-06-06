@@ -7,33 +7,68 @@ const { lib2 } = Astro.props;
 const { lib3 } = Astro.props;
 ---
 
-<section class="relative p-5 overflow-hidden shadow-inner c-border">
-  <div class="absolute py-1 transform rotate-45 text-center text-xs right-[-30px] top-[10px] w-[120px] drop-shadow-sm c-border z-20">
+<section class="mfexample">
+  <div
+    class="absolute py-1 transform rotate-45 text-center text-xs right-[-30px] top-[10px] w-[120px] drop-shadow-sm c-border z-20"
+  >
     {rendering}
   </div>
+
   <p class="pb-3 font-bold text-xs">{title}</p>
-  <div class="c-shadow">
-    <div class="flex h-28 pb-3 space-x-1">
-      <div class="basis-1/3 p-3 drop-shadow-md c-border">
-        <img src={lib1} typeof="foaf:Image" class="m-auto size-6" />
-      </div>
-      <div class="basis-1/3 p-3 drop-shadow-md c-border">
-        <img src={lib2} typeof="foaf:Image" class="m-auto size-6" />
-      </div>
-      <div class="basis-1/3 p-3 drop-shadow-md c-border">
-        <img src={lib3} typeof="foaf:Image" class="m-auto size-6" />
-      </div>
+
+  <div class="elements shadow">
+    <div class="element">
+      <img src={lib1} typeof="foaf:Image" class="m-auto size-6" />
     </div>
-    <div class="p-1 text-center text-xs drop-shadow-md c-border">{integration}</div>
+    <div class="element">
+      <img src={lib2} typeof="foaf:Image" class="m-auto size-6" />
+    </div>
+    <div class="element">
+      <img src={lib3} typeof="foaf:Image" class="m-auto size-6" />
+    </div>
+    <div class="element integration">
+      {integration}
+    </div>
   </div>
 </section>
 
 <style>
-  .c-shadow {
-    filter: drop-shadow(0px 0px 30px rgba(255, 90, 85, 0.4));
+  .mfexample {
+    border: 1px solid #ebeee2;
+    padding: 1.5rem;
+    display: grid;
+    grid-template-rows: auto 1fr;
+    border-radius: 24px;
+    overflow: hidden;
+  }
+  .elements {
+    display: grid;
+    gap: 0.5rem;
+    grid-template:
+      "microfrontend microfrontend microfrontend" 1fr
+      "integration integration integration" 40px / 1fr 1fr 1fr;
+  }
+
+  .element {
+    background-color: white;
+    border: 1px solid #ebeee2;
+    border-radius: 10px;
+    display: grid;
+    place-content: center;
+  }
+
+  .element.integration {
+    grid-column: span 3;
+  }
+
+  .shadow {
+    filter: drop-shadow(-3px -3px 3px rgba(255, 255, 255, 0.4))
+      drop-shadow(1px 2px 2px #edcdcd) drop-shadow(2px 4px 2px #edcdcd)
+      drop-shadow(0px 4px 40px rgba(255, 90, 85, 0.3));
+    transform: translateZ(0);
   }
   .c-border {
-    border: 1px solid #EEEBE2;
+    border: 1px solid #eeebe2;
     border-radius: 0.5rem;
     background: white;
   }
