@@ -7,26 +7,33 @@ const { lib2 } = Astro.props;
 const { lib3 } = Astro.props;
 ---
 
-<section class="p-5 border border-slate-300 rounded-lg overflow-hidden">
+<section class="relative p-5 overflow-hidden shadow-inner c-border">
+  <div class="absolute py-1 transform rotate-45 text-center text-xs right-[-30px] top-[10px] w-[120px] drop-shadow-sm c-border z-20">
+    {rendering}
+  </div>
   <p class="pb-3 font-bold text-xs">{title}</p>
-  <div class="custom_shadow">
+  <div class="c-shadow">
     <div class="flex h-28 pb-3 space-x-1">
-      <div class="basis-1/3 p-3 border border-slate-300 rounded-lg bg-white drop-shadow-md">
+      <div class="basis-1/3 p-3 drop-shadow-md c-border">
         <img src={lib1} typeof="foaf:Image" class="m-auto size-6" />
       </div>
-      <div class="basis-1/3 p-3 border border-slate-300 rounded-lg bg-white drop-shadow-md">
+      <div class="basis-1/3 p-3 drop-shadow-md c-border">
         <img src={lib2} typeof="foaf:Image" class="m-auto size-6" />
       </div>
-      <div class="basis-1/3 p-3 border border-slate-300 rounded-lg bg-white drop-shadow-md">
+      <div class="basis-1/3 p-3 drop-shadow-md c-border">
         <img src={lib3} typeof="foaf:Image" class="m-auto size-6" />
       </div>
     </div>
-    <div class="p-1 border border-slate-300 rounded-lg text-center bg-white drop-shadow-md">{integration}</div>
-    <!--<p class="p-1 border border-slate-300 rounded-lg text-center bg-white">{rendering}</p>-->
+    <div class="p-1 text-center drop-shadow-md c-border">{integration}</div>
   </div>
 </section>
 <style>
-  .custom_shadow {
+  .c-shadow {
     filter: drop-shadow(0px 0px 30px rgba(255, 90, 85, 0.4));
+  }
+  .c-border {
+    border: 1px solid #EEEBE2;
+    border-radius: 0.5rem;
+    background: white;
   }
 </style>

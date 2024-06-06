@@ -4,35 +4,27 @@ import TeamBoundaries from "./teamBoundaries.astro";
 ---
 
 <div class="mb-8">
-  <!--<h3
-    class="font-bold text-text-heading text-2xl md:text-3xl pt-4 pb-2 overflow-hidden"
-        <span
-      class="
-          bg-gradient-to-bl bg-no-repeat bg-bottom bg-[length:110%_60%]
-          from-orange-300 to-orange-600 dark:from-primary-blue dark:to-primary-blue
-      "
-    >
-     Placeholder
-    </span>
-  >-->
-  <h3 class="font-bold text-text-heading text-2xl md:text-3xl pt-4 pb-1 mb-2 w-fit overflow-hidden" data-annotate="underline">
-    Placeholder
-  </h3>
-
   <div class="md:flex items-center space-x-2">
     <div class="lg:basis-1/4">
-      <MFExample title="Module Federation with ..." lib1="images/lib.svg" lib2="images/lib.svg" lib3="images/lib.svg" integration="Single SPA" rendering="client & server rendering" />
+      <MFExample title="Module Federation..." lib1="images/lib.svg" lib2="images/lib.svg" lib3="images/lib.svg" integration="Single SPA" rendering="SSR" />
     </div>
     <div class="lg:basis-1/4">
-      <MFExample title="Svelte Example" lib1="images/svelte.svg" lib2="images/svelte.svg" lib3="images/svelte.svg"  integration="SSI" rendering="client rendering" />
+      <MFExample title="Svelte Example" lib1="images/svelte.svg" lib2="images/svelte.svg" lib3="images/svelte.svg"  integration="SSI" rendering="CSR" />
     </div>
     <div class="lg:basis-1/4">
-      <MFExample title="React & Vue Example" lib1="images/react.svg" lib2="images/react.svg" lib3="images/vue.svg"  integration="Tailor" rendering="client & server rendering" />
+      <MFExample title="React & Vue Example" lib1="images/react.svg" lib2="images/react.svg" lib3="images/vue.svg"  integration="Tailor" rendering="SSR" />
     </div>
     <div class="basis-1/4">
       <p class="md:text-right md:pr-4">
         Same verticalized micro frontends application with different tech stacks and integration techniques.
       </p>
+      <button class="mt-2 mb-2 c_Button c_Button--secondary c_Button--size-normal">
+        <span class="c_Button__inner">CONTRIBUTE</span>
+      </button>
+      <button class="mb-2 c_Button c_Button--primary c_Button--size-normal">
+        <span class="c_Button__inner">SEE ALL EXAMPLES</span>
+      </button>
+
     </div>
   </div>
   <div class="md:flex items-center mt-8">
@@ -46,3 +38,146 @@ import TeamBoundaries from "./teamBoundaries.astro";
     </div>
   </div>
 </div>
+<style>
+  .c_Button--size-normal {
+    --button-height: 50px;
+  }
+
+  .c_Button--size-small {
+    --button-height: 40px;
+  }
+
+  .c_Button {
+    display: block;
+    height: var(--button-height);
+    width: 100%;
+    border-radius: calc(var(--button-height) / 2);
+    padding: 2px;
+    border: 0;
+    background: linear-gradient(180deg, rgb(168, 168, 168), rgb(255, 255, 255)),
+    var(--accent-color);
+    box-shadow:
+        0 -2px 3px rgb(229, 229, 229),
+        0 2px 3px 2px rgb(255, 255, 255),
+        0 0 25px rgba(0, 0, 0, 0.05),
+        0 -10px 5px rgb(255, 255, 255) inset;
+    position: relative;
+    text-transform: uppercase;
+    letter-spacing: 0.3em;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    text-decoration: none;
+    font-size: 16px;
+  }
+
+  .c_Button--primary {
+    --accent-color: #FF5A55;
+    color: #fff;
+  }
+
+  .c_Button--secondary {
+    --accent-color: #ffffff;
+    color: #000;
+  }
+
+  .c_Button--rounded.c_Button--size-normal {
+    @media (max-width: 499px) {
+      --button-height: 40px;
+    }
+    @media (min-width: 500px) {
+      --button-height: 66px;
+    }
+    width: var(--button-height);
+  }
+
+  .c_Button--rounded.c_Button--size-small {
+    --button-height: 40px;
+
+    width: var(--button-height);
+  }
+
+  .c_Button--rounded .c_Button__inner {
+    padding: 0;
+  }
+
+  @media (max-width: 499px) {
+    .c_Button--rounded svg {
+      width: 20px;
+      height: 20px;
+    }
+  }
+
+  .c_Button[disabled] {
+    --accent-color: #d3d3d3;
+    pointer-events: none;
+  }
+
+  .c_Button::before {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: inherit;
+    left: 0;
+    background: linear-gradient(
+        0deg,
+        rgba(0, 0, 0, 0.19),
+        rgba(255, 255, 255, 0.3)
+    ),
+    var(--accent-color);
+    content: "";
+    box-shadow: 0 2px 1px -1px rgba(0, 0, 0, 0.1);
+    display: block;
+    transition:
+        transform 0.3s,
+        box-shadow 0.3s,
+        background 0.1s 0.2s;
+  }
+
+  .c_Button__inner {
+    position: relative;
+    padding-left: 20px;
+    padding-right: 20px;
+    background-color: var(--accent-color);
+    height: calc(var(--button-height) - 4px);
+    border-radius: inherit;
+    display: grid;
+    place-content: center;
+    transition:
+        transform 0.3s,
+        background 0.3s,
+        box-shadow 0.3s;
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none;
+    white-space: nowrap;
+  }
+
+  .c_Button:hover .c_Button__inner,
+  .c_Button:focus .c_Button__inner {
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.05)),
+    var(--accent-color);
+  }
+
+  .c_Button:active::before {
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.09), rgba(0, 0, 0, 0.16)),
+    var(--accent-color);
+    box-shadow:
+        0 0 3px rgba(0, 0, 0, 0.6) inset,
+        0 2px 1px -1px rgba(0, 0, 0, 0.1);
+    transform: scale(0.97);
+    transition:
+        all 0.1s,
+        background 0.05s;
+  }
+
+  .c_Button:active .c_Button__inner {
+    transform: scale(0.97);
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),
+    var(--accent-color);
+    transition: all 0.1s;
+    box-shadow:
+        0 5px 5px rgba(0, 0, 0, 0.2) inset,
+        0 -3px 3px rgba(255, 255, 255, 0.2) inset;
+  }
+
+</style>
