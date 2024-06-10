@@ -1,5 +1,5 @@
 ---
-import MFExample from "./MFExample.astro";
+import MFExample from "../MFExample.astro";
 ---
 
 <div class="root">
@@ -63,7 +63,14 @@ import MFExample from "./MFExample.astro";
     margin-bottom: 4rem;
   }
   .text {
-    grid-column: 1 / 6;
+    @media (max-width: 999px) {
+      margin-bottom: 2rem;
+      grid-column: 1 / -1;
+    }
+
+    @media (min-width: 1000px) {
+      grid-column: 1 / 6;
+    }
     margin-bottom: 2rem;
   }
 
@@ -75,7 +82,17 @@ import MFExample from "./MFExample.astro";
     grid-column: 1 / 13;
   }
   .examples > :global(*) {
-    grid-column: span 3;
+    @media (max-width: 499px) {
+      grid-column: span 12;
+    }
+
+    @media (min-width: 500px) and (max-width: 999px) {
+      grid-column: span 6;
+    }
+
+    @media (min-width: 1000px) {
+      grid-column: span 3;
+    }
   }
 
   .c_Button--size-normal {
