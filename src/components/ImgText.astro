@@ -1,20 +1,19 @@
 ---
 import MFExample from "./MFExample.astro";
-import TeamBoundaries from "./teamBoundaries.astro";
 ---
 
-<div class="mb-8">
-  <!--<h3
-    class="font-bold text-text-heading text-2xl md:text-3xl pt-4 pb-2 overflow-hidden"
-        <span
-      class="
-          bg-gradient-to-bl bg-no-repeat bg-bottom bg-[length:110%_60%]
-          from-orange-300 to-orange-600 dark:from-primary-blue dark:to-primary-blue
-      "
+<div class="root">
+  <div class="text">
+    <h2
+      class="font-bold text-text-heading text-2xl md:text-3xl pt-4 pb-2 overflow-hidden"
     >
-     Placeholder
-    </span>
-  >-->
+      Implementations
+    </h2>
+    <p class="">
+      Same verticalized micro frontends application with different tech stacks
+      and integration techniques.
+    </p>
+  </div>
 
   <div class="examples">
     <MFExample
@@ -42,11 +41,9 @@ import TeamBoundaries from "./teamBoundaries.astro";
       lib3="images/vue.svg"
       integration="Tailor"
       rendering="SSR"
-    /><div class="basis-1/4">
-      <p class="md:text-right md:pr-4">
-        Same verticalized micro frontends application with different tech stacks
-        and integration techniques.
-      </p>
+    />
+
+    <div>
       <button
         class="mt-2 mb-2 c_Button c_Button--secondary c_Button--size-normal"
       >
@@ -57,20 +54,30 @@ import TeamBoundaries from "./teamBoundaries.astro";
       </button>
     </div>
   </div>
-  <div class="md:flex items-center mt-8">
-    <div class="basis-3/4">
-      <TeamBoundaries />
-    </div>
-    <div class="basis-1/4 md:pl-4 pt-4">
-      <p>
-        E-Commerce project with boundaries for three teams and use-cases for
-        routing, integration and communication.
-      </p>
-    </div>
-  </div>
 </div>
 
 <style>
+  .root {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    margin-bottom: 4rem;
+  }
+  .text {
+    grid-column: 1 / 6;
+    margin-bottom: 2rem;
+  }
+
+  .examples {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: 300px;
+    gap: 1rem;
+    grid-column: 1 / 13;
+  }
+  .examples > :global(*) {
+    grid-column: span 3;
+  }
+
   .c_Button--size-normal {
     --button-height: 50px;
   }
@@ -197,14 +204,5 @@ import TeamBoundaries from "./teamBoundaries.astro";
     transition: all 0.1s;
     box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2) inset,
       0 -3px 3px rgba(255, 255, 255, 0.2) inset;
-  }
-</style>
-
-<style>
-  .examples {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: 300px;
-    gap: 1rem;
   }
 </style>
