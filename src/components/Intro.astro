@@ -1,27 +1,15 @@
 ---
 ---
 
-<section class="mb-20">
-  <div class="mb-6">
-    <!--<h1
-      class="font-bold text-text-heading text-center text-4xl md:text-5xl pt-4"
+<section class="mb-20 intro">
+  <div class="text">
+    <h1
+      class="pt-4 mb-10 m-auto font-bold text-text-heading text-3xl md:text-4xl"
     >
-      <span
-        class="
-            bg-gradient-to-b bg-no-repeat bg-bottom bg-[length:100%_50%]
-            from-orange-200 to-orange-500 dark:from-primary-blue dark:to-primary-blue
-        "
-      >
-       The Tractor Store
-      </span>
-    </h1>-->
-    <h1 class="pt-4 m-auto font-bold text-text-heading text-3xl md:text-4xl">
       <span data-annotate="underline">
-        a non-trivial micro frontends example project
+        a non-trivial<br /> micro frontends<br /> example project
       </span>
     </h1>
-  </div>
-  <div>
     <p>
       The Tractor Store is a template to experiment with micro frontend
       architecture. Goal is to create a real world application where developers
@@ -31,47 +19,71 @@
       </span>
     </p>
   </div>
-  <script type="module">
-    import { annotate } from "https://unpkg.com/rough-notation?module";
-    const observer = new IntersectionObserver(handleIntersection, {
-      threshold: [1],
-    });
-
-    Array.from(document.querySelectorAll("[data-annotate]")).forEach(
-      (element) => {
-        observer.observe(element);
-      }
-    );
-
-    function handleIntersection(entries, observer) {
-      entries.forEach((entry) => {
-        const element = entry.target;
-        if (entry.isIntersecting) {
-          showAnnotation(element);
-        }
-      });
-    }
-
-    function showAnnotation(element) {
-      const type = element.getAttribute("data-annotate");
-      if (!type) {
-        return;
-      }
-      let color = "#ffde54";
-      if (document.documentElement.classList.contains("dark")) {
-        color = "#FF5A55";
-      }
-      annotate(element, {
-        type,
-        color,
-        iterations: 2,
-        multiline: true,
-        animationDuration: 3000,
-        animationDelay: 5000,
-      }).show();
-      element.removeAttribute("data-annotate");
-    }
-
-    // TODO: add dark mode colors
-  </script>
+  <img
+    class="image"
+    src="/images/hero.svg"
+    alt="illustration of a micro frontend setup consisting of three vertical boxes on one horiziontal box"
+  />
 </section>
+
+<style>
+  .intro {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 1rem;
+  }
+
+  .text {
+    grid-column: 1 / 7;
+  }
+
+  .image {
+    grid-column: 8 / -1;
+    filter: drop-shadow(-30px -10px 100px rgba(255, 90, 85, 0.33));
+    transform: translateZ(0);
+  }
+</style>
+
+<script type="module">
+  import { annotate } from "https://unpkg.com/rough-notation?module";
+  const observer = new IntersectionObserver(handleIntersection, {
+    threshold: [1],
+  });
+
+  Array.from(document.querySelectorAll("[data-annotate]")).forEach(
+    (element) => {
+      observer.observe(element);
+    }
+  );
+
+  function handleIntersection(entries, observer) {
+    entries.forEach((entry) => {
+      const element = entry.target;
+      if (entry.isIntersecting) {
+        showAnnotation(element);
+      }
+    });
+  }
+
+  function showAnnotation(element) {
+    const type = element.getAttribute("data-annotate");
+    if (!type) {
+      return;
+    }
+    let color = "#ffde54";
+    if (document.documentElement.classList.contains("dark")) {
+      color = "#FF5A55";
+    }
+    annotate(element, {
+      type,
+      color,
+      iterations: 2,
+      multiline: true,
+      animationDuration: 3000,
+      animationDelay: 5000,
+    }).show();
+    element.removeAttribute("data-annotate");
+  }
+
+  // TODO: add dark mode colors
+</script>
