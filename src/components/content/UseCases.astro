@@ -1,0 +1,182 @@
+---
+---
+
+<div class="mb-8 pb-8 pt-6 c-background">
+  <div class="max-w-6xl mx-auto px-6 sm:px-8">
+    <h3
+      class="font-bold text-center text-text-heading text-2xl md:text-3xl pt-4 pb-6 overflow-hidden"
+    >
+      Features
+    </h3>
+
+    <div class="useCase">
+      <img
+        src="images/walkthrough.webp"
+        class="image"
+        alt="project visualisation"
+        width="500"
+        loading="lazy"
+      />
+
+      <div class="text">
+        <h4 class="font-bold">Complete Online Shop</h4>
+        Homepage, category, stores, product detail, cart, checkout and thank you
+        page are included.
+      </div>
+    </div>
+
+    <div class="useCase">
+      <img
+        src="images/header_footer.webp"
+        class="image"
+        alt="possible tech stack visualisation"
+        width="500"
+        loading="lazy"
+      />
+      <div class="text">
+        <h4 class="font-bold">Header &amp; Footer</h4>
+        <p>
+          Owned by Team Explore. The same across all pages. Except for the
+          checkout page.
+        </p>
+      </div>
+    </div>
+
+    <div class="useCase">
+      <img
+        src="images/recommendations.webp"
+        class="image"
+        alt="recommendations"
+        width="500"
+        loading="lazy"
+      />
+
+      <div class="text">
+        <h4 class="font-bold">Recommendations</h4>
+        <p>
+          Color-matched tractor suggestions. Based on product selection and
+          shopping cart contents.
+        </p>
+      </div>
+    </div>
+
+    <div class="useCase">
+      <img
+        src="images/cart.webp"
+        class="image"
+        alt="possible tech stack visualisation"
+        width="500"
+        loading="lazy"
+      />
+
+      <div class="text">
+        <h4 class="font-bold">Shopping Cart</h4>
+        <p class="md:text-right">
+          Add and remove tractors. Minicart updates accordingly.
+        </p>
+      </div>
+    </div>
+
+    <div class="useCase">
+      <img
+        src="images/storepicker.webp"
+        alt="store picker"
+        width="500"
+        class="image"
+        loading="lazy"
+      />
+
+      <div class="text">
+        <h4 class="font-bold">Complex Validation</h4>
+        <p class="md:text-left">
+          Checkout address form with embedded store picker owned by explore.
+        </p>
+      </div>
+    </div>
+
+    <div class="useCase">
+      <img
+        src="images/confetti.webp"
+        alt="thank you confetti"
+        width="500"
+        class="image"
+        loading="lazy"
+      />
+
+      <div class="text">
+        <h4 class="font-bold">Confirmation Confetti</h4>
+        <p class="md:text-right">
+          Celebration on success. External dependency powered.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .useCase {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 1rem;
+    margin-bottom: 4rem;
+  }
+
+  @media (min-width: 500px) {
+    .useCase > * {
+      grid-row: 1;
+    }
+  }
+
+  .useCase .image {
+    width: 100%;
+    box-shadow: 0 7px 25px rgba(0, 0, 0, 0.15);
+  }
+
+  @media (max-width: 499px) {
+    .useCase .image {
+      grid-column: 1 / -1;
+    }
+
+    .useCase .text {
+      grid-column: 2 / -2;
+    }
+  }
+
+  @media (min-width: 500px) and (max-width: 999px) {
+    .useCase:nth-child(even) .image {
+      grid-column: 2 / 8;
+    }
+
+    .useCase:nth-child(even) .text {
+      grid-column: 8 / -1;
+    }
+
+    .useCase:nth-child(odd) .image {
+      grid-column: 6 / 12;
+    }
+
+    .useCase:nth-child(odd) .text {
+      grid-column: 1 / 6;
+      text-align: right;
+    }
+  }
+
+  @media (min-width: 1000px) {
+    .useCase:nth-child(even) .image {
+      grid-column: 3 / 8;
+    }
+
+    .useCase:nth-child(even) .text {
+      grid-column: 8 / 11;
+    }
+
+    .useCase:nth-child(odd) .image {
+      grid-column: 6 / 11;
+    }
+
+    .useCase:nth-child(odd) .text {
+      grid-column: 3 / 6;
+      text-align: right;
+    }
+  }
+</style>
