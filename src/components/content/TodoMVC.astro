@@ -90,8 +90,11 @@
   }
 
   .text {
-    @media (max-width: 999px) {
+    @media (max-width: 499px) {
       grid-column: 1 / -1;
+    }
+    @media (min-width: 500px) and (max-width: 999px) {
+      grid-column: 2 / -2;
     }
     @media (min-width: 1000px) {
       grid-column: 8 / -1;
