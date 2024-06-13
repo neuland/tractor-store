@@ -8,11 +8,13 @@ const { lib3 } = Astro.props;
 ---
 
 <section class="mfexample">
-  <div
-    class="absolute py-1 transform rotate-45 text-center text-xs right-[-30px] top-[10px] w-[120px] drop-shadow-sm c-border z-20"
-  >
-    {rendering}
-  </div>
+  {rendering ?
+    <div
+      class="absolute py-1 transform rotate-45 text-center text-xs right-[-30px] top-[10px] w-[120px] drop-shadow-sm c-border z-20 text-xs"
+    >
+      {rendering}
+    </div>
+  : null}
 
   <p class="pb-3 font-bold text-xs">{title}</p>
 
@@ -26,7 +28,7 @@ const { lib3 } = Astro.props;
     <div class="element">
       <img src={lib3} typeof="foaf:Image" class="m-auto size-6" />
     </div>
-    <div class="element integration">
+    <div class="element integration text-xs">
       {integration}
     </div>
   </div>
