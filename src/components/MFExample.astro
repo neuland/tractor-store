@@ -83,6 +83,10 @@ const {
     overflow: hidden;
     position: relative;
   }
+  :global(.dark) .mfexample {
+    border: 1px solid #4b3648;
+  }
+
   .elements {
     border-radius: 10px;
     display: grid;
@@ -100,6 +104,15 @@ const {
     place-content: center;
   }
 
+  :global(.dark) .element {
+    background-color: #0f182a;
+    border: 1px solid #4b3648;
+  }
+
+  :global(.dark) .element img {
+    filter: invert(1);
+  }
+
   .element.vertical {
     min-height: 100px;
   }
@@ -115,10 +128,13 @@ const {
       drop-shadow(0px 4px 40px rgba(255, 90, 85, 0.3));
     transform: translateZ(0);
   }
-  .c-border {
-    border: 1px solid #eeebe2;
-    border-radius: 0.5rem;
-    background: white;
+
+  :global(.dark) .c_shadow {
+    filter: drop-shadow(-3px -3px 3px rgba(255, 255, 255, 0.1))
+      drop-shadow(2px 3px 2px #322030) drop-shadow(3px 6px 4px #322030)
+      drop-shadow(4px 9px 6px #322030)
+      drop-shadow(0px 4px 40px rgba(255, 90, 85, 0.3));
+    transform: translateZ(0);
   }
 
   .repository {

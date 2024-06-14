@@ -1,11 +1,11 @@
 ---
 ---
 
-<section class="lg:flex">
-  <div class="basis-3/5">
+<section class="contribute">
+  <div class="image">
     <img src="images/contribute.svg" typeof="foaf:Image" />
   </div>
-  <div class="basis-2/5 md:pt-12">
+  <div class="text pt-12">
     <h3 class="font-bold text-text-heading text-2xl md:text-3xl pb-2">
       How to Contribute
     </h3>
@@ -34,3 +34,38 @@
     </ol>
   </div>
 </section>
+
+<style>
+  .contribute {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(12, 1fr);
+  }
+
+  .image {
+    @media (max-width: 499px) {
+      grid-column: 1 / -1;
+    }
+    @media (min-width: 500px) and (max-width: 999px) {
+      grid-column: 3 / -3;
+    }
+    @media (min-width: 1000px) {
+      grid-column: 1 / span 7;
+    }
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .text {
+    @media (max-width: 499px) {
+      grid-column: 1 / -1;
+    }
+    @media (min-width: 500px) and (max-width: 999px) {
+      grid-column: 2 / -2;
+    }
+    @media (min-width: 1000px) {
+      grid-column: 8 / span 5;
+    }
+  }
+</style>
