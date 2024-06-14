@@ -17,19 +17,29 @@ import MFExample from "../MFExample.astro";
 
   <div class="examples">
     <MFExample
-      title="Blueprint (vanilla, no frameworks)"
+      title="Blueprint"
+      rendering="Vanilla, no frameworks"
       lib1="images/tech/html.svg"
       lib2="images/tech/html.svg"
       lib3="images/tech/html.svg"
       integration="Modular Monolith"
+      author="Michael Geers"
+      company="neuland - Büro für Informatik"
+      githubUrl="https://github.com/neuland/tractor-store"
+      liveUrl="https://tractor-store-blueprint.neuland-bfi.workers.dev"
     />
 
     <MFExample
-      title="Preact (universal rendering)"
+      title="Preact"
+      rendering="Universal Rendering"
       lib1="images/tech/preact.svg"
       lib2="images/tech/preact.svg"
       lib3="images/tech/preact.svg"
       integration="ESI, Web Components"
+      author="Michael Geers"
+      company="neuland - Büro für Informatik"
+      githubUrl="https://github.com/neuland/tractor-store-preact"
+      liveUrl="https://tractor-store-blueprint.neuland-bfi.workers.dev"
     />
 
     <MFExample
@@ -39,17 +49,6 @@ import MFExample from "../MFExample.astro";
       lib3="images/tech/question.svg"
       integration="[...]"
     />
-
-    <div>
-      <button
-        class="mt-2 mb-2 c_Button c_Button--secondary c_Button--size-normal"
-      >
-        <span class="c_Button__inner">CONTRIBUTE</span>
-      </button>
-      <button class="mb-2 c_Button c_Button--primary c_Button--size-normal">
-        <span class="c_Button__inner">SEE ALL EXAMPLES</span>
-      </button>
-    </div>
   </div>
 </div>
 
@@ -74,7 +73,6 @@ import MFExample from "../MFExample.astro";
   .examples {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
-    grid-template-rows: 300px;
     gap: 1rem;
     grid-column: 1 / 13;
   }

@@ -115,15 +115,10 @@
         just add a class `unset` to it. 
     */
   a:not(.unset) {
-    text-decoration: none;
+    text-decoration: underline;
     background-repeat: no-repeat;
     background-size: 100% 1.5px;
     background-position: 0 100%;
-    background-image: linear-gradient(
-      to right,
-      theme("colors.text.link"),
-      theme("colors.text.link")
-    );
   }
 
   a:not(.unset):hover {

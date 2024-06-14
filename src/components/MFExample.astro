@@ -1,36 +1,75 @@
 ---
-const { title } = Astro.props;
-const { rendering } = Astro.props;
-const { integration } = Astro.props;
-const { lib1 } = Astro.props;
-const { lib2 } = Astro.props;
-const { lib3 } = Astro.props;
+const {
+  title,
+  flag,
+  rendering,
+  integration,
+  lib1,
+  lib2,
+  lib3,
+  author,
+  company,
+  githubUrl,
+  liveUrl,
+} = Astro.props;
 ---
 
 <section class="mfexample">
-  {rendering ?
-    <div
-      class="absolute py-1 transform rotate-45 text-center text-xs right-[-30px] top-[10px] w-[120px] drop-shadow-sm c-border z-20 text-xs"
-    >
-      {rendering}
-    </div>
-  : null}
+  {
+    flag ? (
+      <div class="absolute py-1  transform rotate-45 text-center text-xs right-[-30px] top-[10px] w-[120px] drop-shadow-sm c-border z-20 text-xs">
+        {flag}
+      </div>
+    ) : null
+  }
 
-  <p class="pb-3 font-bold text-xs">{title}</p>
+  <p class="pb-3 px-1 text-xs">
+    <strong>{title}</strong><br />
+    {rendering}
+  </p>
 
   <div class="elements c_shadow">
-    <div class="element">
+    <div class="element vertical">
       <img src={lib1} typeof="foaf:Image" class="m-auto size-6" />
     </div>
-    <div class="element">
+    <div class="element vertical">
       <img src={lib2} typeof="foaf:Image" class="m-auto size-6" />
     </div>
-    <div class="element">
+    <div class="element vertical">
       <img src={lib3} typeof="foaf:Image" class="m-auto size-6" />
     </div>
     <div class="element integration text-xs">
       {integration}
     </div>
+  </div>
+
+  <div class="repository text-xs px-1">
+    {
+      author && (
+        <p class="author">
+          <>
+            <strong>by {author}</strong>
+            <br />
+          </>
+          {company}
+        </p>
+      )
+    }
+    {
+      githubUrl && (
+        <a class="githubUrl" href={githubUrl}>
+          View on Github
+        </a>
+      )
+    }
+
+    {
+      liveUrl && (
+        <a class="liveUrl" href={liveUrl}>
+          Live Demo
+        </a>
+      )
+    }
   </div>
 </section>
 
@@ -39,7 +78,7 @@ const { lib3 } = Astro.props;
     border: 1px solid #ebeee2;
     padding: 1.5rem;
     display: grid;
-    grid-template-rows: auto 1fr;
+    grid-template-rows: auto 1fr auto;
     border-radius: 24px;
     overflow: hidden;
     position: relative;
@@ -61,6 +100,10 @@ const { lib3 } = Astro.props;
     place-content: center;
   }
 
+  .element.vertical {
+    min-height: 100px;
+  }
+
   .element.integration {
     grid-column: span 3;
   }
@@ -76,5 +119,28 @@ const { lib3 } = Astro.props;
     border: 1px solid #eeebe2;
     border-radius: 0.5rem;
     background: white;
+  }
+
+  .repository {
+    margin-top: 1rem;
+    display: grid;
+    gap: 0.5rem;
+    grid-template:
+      "author author" auto
+      "githubUrl liveUrl" auto / 1fr 1fr;
+  }
+
+  .author {
+    grid-area: author;
+  }
+
+  .githubUrl {
+    grid-area: githubUrl;
+    justify-self: start;
+  }
+
+  .liveUrl {
+    grid-area: liveUrl;
+    justify-self: end;
   }
 </style>
