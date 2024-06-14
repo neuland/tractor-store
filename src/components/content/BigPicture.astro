@@ -2,15 +2,90 @@
 import TeamBoundaries from "../teamBoundaries.astro";
 ---
 
-<h2>Big picture / Team responsabilities</h2>
-<div class="md:flex items-center mt-8">
-  <div class="basis-3/4">
-    <TeamBoundaries />
-  </div>
-  <div class="basis-1/4 md:pl-4 pt-4">
+<h2
+  class="font-bold text-text-heading text-2xl md:text-3xl pt-4 mb-12 w-fit overflow-hidden"
+>
+  Big picture / Team responsabilities
+</h2>
+
+<div class="teams mb-12">
+  <div class="team explore">
+    <h3 class="font-bold text-text-heading text-xl mb-4">Team Explore</h3>
     <p>
-      E-Commerce project with boundaries for three teams and use-cases for
-      routing, integration and communication.
+      <strong>Mission</strong><br />
+      Help users explore the tractor portfolio and stores locations.<br /><br />
+
+      <strong>Responsibility</strong><br />
+      home, product lists, stores, recommendations
+    </p>
+  </div>
+  <div class="team decide">
+    <h3 class="font-bold text-text-heading text-xl mb-4">Team Decide</h3>
+    <p>
+      <strong>Mission</strong><br />
+      Help users decide what model tractor they should choose.
+      <br /><br />
+
+      <strong>Responsibility</strong><br />
+      product page
+    </p>
+  </div>
+  <div class="team checkout">
+    <h3 class="font-bold text-text-heading text-xl mb-4">Team Checkout</h3>
+    <p>
+      <strong>Mission</strong><br />
+      Guide users through the checkout process.
+      <br /><br />
+
+      <strong>Responsibility</strong><br />
+      cart, checkout, thanks
     </p>
   </div>
 </div>
+
+<style>
+  .teams {
+    @media (max-width: 499px) {
+      grid-template-columns: 1fr;
+    }
+
+    @media (min-width: 500px) and (max-width: 999px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (min-width: 1000px) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    display: grid;
+    gap: 1rem;
+  }
+
+  .team {
+    position: relative;
+    padding-left: 1.3rem;
+    padding-right: 10%;
+  }
+
+  .team::before {
+    display: block;
+    content: "";
+    width: 5px;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    border-radius: 3px;
+  }
+
+  .team.explore::before {
+    background-color: rgba(255, 90, 84, 1);
+  }
+
+  .team.decide::before {
+    background-color: rgba(84, 255, 144, 1);
+  }
+
+  .team.checkout::before {
+    background-color: rgba(255, 222, 84, 1);
+  }
+</style>

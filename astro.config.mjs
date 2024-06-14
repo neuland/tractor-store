@@ -32,6 +32,7 @@ export default defineConfig({
   site: BASE_URL,
   base: "/tractor-store/",
   trailingSlash: "always",
+  compressHTML: true,
   integrations: [
     sitemap(),
     tailwind({
