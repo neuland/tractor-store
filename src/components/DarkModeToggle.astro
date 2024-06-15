@@ -1,5 +1,7 @@
 ---
+
 ---
+
 <mode-toggle class="flex">
   <button
     class="justify-self-end bg-black dark:bg-white ml-4 inline-flex h-6 w-11 items-center rounded-full"
@@ -21,24 +23,12 @@
 
 <script>
   function updateHTMLTheme(mode: "light" | "dark") {
-    const themeColorMetaTag = document.head.querySelector(
-      'meta[name="theme-color"]'
-    );
-
     if (mode === "dark") {
       document.documentElement.classList.remove("light");
       document.documentElement.classList.add("dark");
-      if (themeColorMetaTag) {
-        // @ts-ignore
-        themeColorMetaTag.content = "#262626";
-      }
     } else {
       document.documentElement.classList.remove("dark");
       document.documentElement.classList.add("light");
-      if (themeColorMetaTag) {
-        // @ts-ignore
-        themeColorMetaTag.content = "#ffffff";
-      }
     }
   }
   function updateStorageTheme(mode: "light" | "dark") {
@@ -107,6 +97,6 @@
   }
   .dark {
     transform: translateX(1.5rem);
-    background-color: #FF5A55;
+    background-color: #ff5a55;
   }
 </style>
