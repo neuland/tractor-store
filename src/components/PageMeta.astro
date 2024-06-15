@@ -1,10 +1,8 @@
 ---
+import detailpage from "../../public/images/detailpage.jpg";
+
 import { getPageMeta } from "../lib/seo";
-import {
-  SITE_TITLE,
-  SITE_DESCRIPTION,
-  SITE_URL,
-} from "../config";
+import { SITE_TITLE, SITE_DESCRIPTION, SITE_URL } from "../config";
 
 export interface Props {
   title?: string;
@@ -17,8 +15,8 @@ const { meta, og, twitter } = getPageMeta({
   title: title || SITE_TITLE,
   description: description || SITE_DESCRIPTION,
   baseUrl: SITE_URL,
-  ogImageAbsoluteUrl: `${SITE_URL}/images/og.png`,
-  ogImageAltText: "My fancy website",
+  ogImageAbsoluteUrl: detailpage.src,
+  ogImageAltText: "Tractor Store 2.0 - TodoMVC for Micro Frontends",
   ogImageWidth: 1200,
   ogImageHeight: 630,
 });
