@@ -17,11 +17,105 @@
       to TodoMVC or Movies, but with a focus on micro frontends.
     </p>
   </div>
-  <img
-    class="image"
-    src="images/hero.svg"
-    alt="illustration of a micro frontend setup consisting of three vertical boxes on one horiziontal box"
-  />
+  <div class="imageWrapper">
+    <img
+      class="image"
+      src="images/hero.svg"
+      alt="illustration of a micro frontend setup consisting of three vertical boxes on one horiziontal box"
+    />
+    <div class="logos logos-1">
+      <img
+        src="images/tech/react.svg"
+        alt="illustration of a micro frontend setup consisting of three vertical boxes on one horiziontal box"
+      />
+      <img
+        src="images/tech/vue.svg"
+        alt="illustration of a micro frontend setup consisting of three vertical boxes on one horiziontal box"
+      />
+      <img
+        src="images/tech/angular.svg"
+        alt="illustration of a micro frontend setup consisting of three vertical boxes on one horiziontal box"
+      />
+      <img
+        src="images/tech/preact.svg"
+        alt="illustration of a micro frontend setup consisting of three vertical boxes on one horiziontal box"
+      />
+      <img
+        src="images/tech/react.svg"
+        alt="illustration of a micro frontend setup consisting of three vertical boxes on one horiziontal box"
+      />
+      <img
+        src="images/tech/solid.svg"
+        alt="illustration of a micro frontend setup consisting of three vertical boxes on one horiziontal box"
+      />
+      <img
+        src="images/tech/htmx.svg"
+        alt="illustration of a micro frontend setup consisting of three vertical boxes on one horiziontal box"
+      />
+    </div>
+
+    <div class="logos logos-2">
+      <img
+        src="images/tech/react.svg"
+        alt="illustration of a micro frontend setup consisting of three vertical boxes on one horiziontal box"
+      />
+      <img
+        src="images/tech/vue.svg"
+        alt="illustration of a micro frontend setup consisting of three vertical boxes on one horiziontal box"
+      />
+      <img
+        src="images/tech/angular.svg"
+        alt="illustration of a micro frontend setup consisting of three vertical boxes on one horiziontal box"
+      />
+      <img
+        src="images/tech/preact.svg"
+        alt="illustration of a micro frontend setup consisting of three vertical boxes on one horiziontal box"
+      />
+      <img
+        src="images/tech/solid.svg"
+        alt="illustration of a micro frontend setup consisting of three vertical boxes on one horiziontal box"
+      />
+      <img
+        src="images/tech/solid.svg"
+        alt="illustration of a micro frontend setup consisting of three vertical boxes on one horiziontal box"
+      />
+      <img
+        src="images/tech/js.svg"
+        alt="illustration of a micro frontend setup consisting of three vertical boxes on one horiziontal box"
+      />
+    </div>
+
+    <div class="logos logos-3">
+      <img
+        src="images/tech/react.svg"
+        alt="illustration of a micro frontend setup consisting of three vertical boxes on one horiziontal box"
+      />
+      <img
+        src="images/tech/vue.svg"
+        alt="illustration of a micro frontend setup consisting of three vertical boxes on one horiziontal box"
+      />
+      <img
+        src="images/tech/angular.svg"
+        alt="illustration of a micro frontend setup consisting of three vertical boxes on one horiziontal box"
+      />
+      <img
+        src="images/tech/preact.svg"
+        alt="illustration of a micro frontend setup consisting of three vertical boxes on one horiziontal box"
+      />
+      <img
+        src="images/tech/react.svg"
+        alt="illustration of a micro frontend setup consisting of three vertical boxes on one horiziontal box"
+      />
+      <img
+        src="images/tech/react.svg"
+        alt="illustration of a micro frontend setup consisting of three vertical boxes on one horiziontal box"
+      />
+      <img
+        src="images/tech/qwik.svg"
+        alt="illustration of a micro frontend setup consisting of three vertical boxes on one horiziontal box"
+      />
+    </div>
+  </div>
 </section>
 
 <style>
@@ -42,17 +136,176 @@
     }
   }
 
-  .image {
-    @media (max-width: 999px) {
-      grid-column: 5 / -5;
+  .imageWrapper {
+    @media (max-width: 499px) {
+      grid-column: 2 / -2;
       margin-bottom: 4rem;
-      filter: drop-shadow(-30px -10px 50px rgba(255, 90, 85, 0.53));
+    }
+    @media (min-width: 500px) and (max-width: 999px) {
+      grid-column: 4 / -4;
+      margin-bottom: 4rem;
     }
 
     @media (min-width: 1000px) {
       grid-column: 8 / -1;
+    }
+
+    position: relative;
+    align-self: self-start;
+  }
+
+  .image {
+    @media (max-width: 999px) {
+      filter: drop-shadow(-30px -10px 50px rgba(255, 90, 85, 0.53));
+    }
+
+    @media (min-width: 1000px) {
       filter: drop-shadow(-30px -10px 100px rgba(255, 90, 85, 0.33));
     }
     transform: translateZ(0);
+  }
+
+  .logos {
+    position: absolute;
+    width: 10%;
+    transform: skew(0, 17.5deg) scale(1, 1.2);
+  }
+
+  .logos img {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  .logos-1 {
+    top: calc(29.5% + 8%);
+    left: 60.3%;
+  }
+
+  .logos-2 {
+    top: calc(20.5% + 8%);
+    left: 33.3%;
+  }
+
+  .logos-3 {
+    top: calc(11.7% + 8%);
+    left: 6.4%;
+  }
+
+  .logos img {
+    animation: swap 28s linear infinite;
+    opacity: 0;
+  }
+
+  .logos-1 img:nth-child(1) {
+    animation-delay: 0s;
+  }
+
+  .logos-1 img:nth-child(2) {
+    animation-delay: 4s;
+  }
+
+  .logos-1 img:nth-child(3) {
+    animation-delay: 8s;
+  }
+
+  .logos-1 img:nth-child(4) {
+    animation-delay: 12s;
+  }
+
+  .logos-1 img:nth-child(5) {
+    animation-delay: 16s;
+  }
+
+  .logos-1 img:nth-child(6) {
+    animation-delay: 20s;
+  }
+
+  .logos-1 img:nth-child(7) {
+    animation-delay: 24s;
+  }
+
+  .logos-2 img:nth-child(1) {
+    animation-delay: calc(0s + 0.5s);
+  }
+
+  .logos-2 img:nth-child(2) {
+    animation-delay: calc(4s + 0.5s);
+  }
+
+  .logos-2 img:nth-child(3) {
+    animation-delay: calc(8s + 0.5s);
+  }
+
+  .logos-2 img:nth-child(4) {
+    animation-delay: calc(12s + 0.5s);
+  }
+
+  .logos-2 img:nth-child(5) {
+    animation-delay: calc(16s + 0.5s);
+  }
+
+  .logos-2 img:nth-child(6) {
+    animation-delay: calc(20s + 0.5s);
+  }
+
+  .logos-2 img:nth-child(7) {
+    animation-delay: calc(24s + 0.5s);
+  }
+
+  .logos-3 img:nth-child(1) {
+    animation-delay: calc(0s + 1s);
+  }
+
+  .logos-3 img:nth-child(2) {
+    animation-delay: calc(4s + 1s);
+  }
+
+  .logos-3 img:nth-child(3) {
+    animation-delay: calc(8s + 1s);
+  }
+
+  .logos-3 img:nth-child(4) {
+    animation-delay: calc(12s + 1s);
+  }
+
+  .logos-3 img:nth-child(5) {
+    animation-delay: calc(16s + 1s);
+  }
+
+  .logos-3 img:nth-child(6) {
+    animation-delay: calc(20s + 1s);
+  }
+
+  .logos-3 img:nth-child(7) {
+    animation-delay: calc(24s + 1s);
+  }
+
+  @keyframes swap {
+    0% {
+      transform: translateY(-70%);
+      opacity: 0;
+    }
+
+    2.5% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    11.5% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    14% {
+      transform: translateY(70%);
+      opacity: 0;
+    }
+
+    100% {
+      transform: translateY(70%);
+      opacity: 0;
+    }
   }
 </style>
