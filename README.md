@@ -41,17 +41,17 @@ There is no one-size-fits-all solution for micro frontends.
 The goal of this project is to provide a central place, where different micro frontend integration techniques can be compared and evaluated.
 
 - Make pros and cons of different tech-stacks and integration techniques visible and discussable
-    - Organizational scalability (more teams, more systems)
-    - Technical scalability (more users, more features)
-    - Performance characteristics (Core-Web-Vitals, ...)
-    - Development experience
+  - Organizational scalability (more teams, more systems)
+  - Technical scalability (more users, more features)
+  - Performance characteristics (Core-Web-Vitals, ...)
+  - Development experience
 - Share knowledge and learnings with the community
 - Provide a blueprint for others to experiment with a specific micro frontends tech stack
 
 ## Implementation gallery
 
 - Fork the blueprint or any other implementation
-- Submit a an issue with a link to your implementation (github repo)
+- Submit a an issue with a link to your implementation (GitHub repo)
 - Describe you tech stack and integration techniques using the issue template
 - Extra points if you provide a hosted version of your implementation
 
@@ -60,20 +60,20 @@ The goal of this project is to provide a central place, where different micro fr
 ### Boundaries 📄
 
 - 🔴 Explore
-    - 📄 Home / Category
-    - 📄 Stores
-    - 🧩 Header (🔴🔵🟢 every page, except checkout)
-    - 🧩 Footer (🔴🔵🟢 every page)
-    - 🧩 Recommendations (🔵 product details, 🔴 cart)
-    - 🧩 Store Picker (🟢 checkout)
+  - 📄 Home / Category
+  - 📄 Stores
+  - 🧩 Header (🔴🔵🟢 every page, except checkout)
+  - 🧩 Footer (🔴🔵🟢 every page)
+  - 🧩 Recommendations (🔵 product details, 🔴 cart)
+  - 🧩 Store Picker (🟢 checkout)
 - 🔵 Decide
-    - 📄 Product Details
+  - 📄 Product Details
 - 🟢 Buy
-    - 📄 Cart
-    - 📄 Checkout
-    - 📄 Thank you
-    - 🧩 Mini Cart (🔴 header)
-    - 🧩 Buy Button (🔵 product details)
+  - 📄 Cart
+  - 📄 Checkout
+  - 📄 Thank you
+  - 🧩 Mini Cart (🔴 header)
+  - 🧩 Buy Button (🔵 product details)
 
 ### Concepts 🧠
 

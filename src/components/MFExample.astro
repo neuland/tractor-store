@@ -11,6 +11,7 @@ const {
   authorUrl,
   githubUrl,
   liveUrl,
+  contribute,
 } = Astro.props;
 ---
 
@@ -46,7 +47,7 @@ const {
   <div class="repository text-xs px-1">
     {
       author && (
-        <a class="author" href={authorUrl}>
+        <a class="author" href={authorUrl}  target="_blank">
           <>
             <strong>by {author}</strong>
           </>
@@ -55,12 +56,18 @@ const {
     }
     {
       githubUrl && (
-        <a class="githubUrl" href={githubUrl}>
-          Github
+        <a class="githubUrl" href={githubUrl} target="_blank">
+          GitHub
         </a>
       )
     }
-
+    {
+     contribute && (
+        <a class="contribute" href="#contribute">
+          Share your approach
+        </a>
+      )
+    }
     {
       liveUrl && (
         <a class="liveUrl" href={liveUrl}>
@@ -177,6 +184,10 @@ const {
   .githubUrl {
     grid-area: githubUrl;
     justify-self: start;
+  }
+
+  .contribute {
+    grid-column: 1 / 3;
   }
 
   .liveUrl {
