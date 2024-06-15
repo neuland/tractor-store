@@ -7,7 +7,6 @@
 // Import the global.css file here so that it is included on
 import "../styles/global.css";
 
-import GoogleFont from "./GoogleFont.astro";
 import ThemeScript from "./ThemeScript.astro";
 import Favicon from "./Favicon.astro";
 import Header from "../components/Header.astro";
@@ -34,7 +33,6 @@ const formattedDate = new Date(date).toLocaleDateString("en-us", {
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <Favicon />
     <slot name="meta" />
-    <GoogleFont />
     <ThemeScript />
   </head>
 
