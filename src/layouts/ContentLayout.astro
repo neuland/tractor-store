@@ -8,7 +8,6 @@
 import "../styles/global.css";
 
 import GoogleFont from "./GoogleFont.astro";
-import FontAwesome from "./FontAwesome.astro";
 import ThemeScript from "./ThemeScript.astro";
 import Favicon from "./Favicon.astro";
 import Header from "../components/Header.astro";
@@ -27,7 +26,7 @@ const formattedDate = new Date(date).toLocaleDateString("en-us", {
 });
 ---
 
-<!DOCTYPE html>
+<!doctype html>
 <html class="theme-bubblegum" lang="en">
   <head>
     <!-- Global Metadata -->
@@ -37,7 +36,6 @@ const formattedDate = new Date(date).toLocaleDateString("en-us", {
     <slot name="meta" />
     <GoogleFont />
     <ThemeScript />
-    <FontAwesome />
   </head>
 
   <body class="max-w-4xl mx-auto min-h-screen px-6 sm:px-8">
