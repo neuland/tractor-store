@@ -8,7 +8,7 @@ const {
   lib2,
   lib3,
   author,
-  company,
+  authorUrl,
   githubUrl,
   liveUrl,
 } = Astro.props;
@@ -46,19 +46,17 @@ const {
   <div class="repository text-xs px-1">
     {
       author && (
-        <p class="author">
+        <a class="author" href={authorUrl}>
           <>
             <strong>by {author}</strong>
-            <br />
           </>
-          {company}
-        </p>
+        </a>
       )
     }
     {
       githubUrl && (
         <a class="githubUrl" href={githubUrl}>
-          View on Github
+          Github
         </a>
       )
     }
@@ -75,11 +73,25 @@ const {
 
 <style>
   .mfexample {
+    @media (max-width: 499px) {
+      padding: 0.5rem;
+      border-radius: 10px;
+    }
+
+    @media (min-width: 500px) and (max-width: 999px) {
+      padding: 1rem;
+      border-radius: 18px;
+    }
+
+    @media (min-width: 1000px) {
+      padding: 1.5rem;
+      border-radius: 24px;
+    }
+
     border: 1px solid #ebeee2;
-    padding: 1.5rem;
     display: grid;
     grid-template-rows: auto 1fr auto;
-    border-radius: 24px;
+    
     overflow: hidden;
     position: relative;
   }
@@ -93,13 +105,14 @@ const {
     gap: 0.5rem;
     grid-template:
       "microfrontend microfrontend microfrontend" 1fr
-      "integration integration integration" 40px / 1fr 1fr 1fr;
+      "integration integration integration" auto / 1fr 1fr 1fr;
   }
 
   .element {
     background-color: white;
     border: 1px solid #ebeee2;
     border-radius: 10px;
+    padding: 9px;
     display: grid;
     place-content: center;
   }
@@ -138,16 +151,27 @@ const {
   }
 
   .repository {
+    @media (max-width: 999px) {
+      grid-template:
+        "author" auto
+        "githubUrl" auto
+        "liveUrl" auto / 1fr;
+    }
+
+    @media screen and (min-width: 1000px) {
+      grid-template:
+        "author author" auto
+        "githubUrl liveUrl" auto / 1fr 1fr;
+    }
+
     margin-top: 1rem;
     display: grid;
     gap: 0.5rem;
-    grid-template:
-      "author author" auto
-      "githubUrl liveUrl" auto / 1fr 1fr;
   }
 
-  .author {
+  a.author {
     grid-area: author;
+    text-decoration: none;
   }
 
   .githubUrl {
@@ -156,7 +180,12 @@ const {
   }
 
   .liveUrl {
+
+    @media screen and (min-width: 1000px) {
+      justify-self: end;
+    }
+
     grid-area: liveUrl;
-    justify-self: end;
+    
   }
 </style>

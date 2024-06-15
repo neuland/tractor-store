@@ -23,8 +23,8 @@ import MFExample from "../MFExample.astro";
       lib2="images/tech/html.svg"
       lib3="images/tech/html.svg"
       integration="Modular Monolith"
-      author="Michael Geers"
-      company="neuland - Büro für Informatik"
+      author="neuland - Büro für Informatik"
+      authorUrl="https://www.neuland-bfi.de"
       githubUrl="https://github.com/neuland/tractor-store"
       liveUrl="https://tractor-store-blueprint.neuland-bfi.workers.dev"
     />
@@ -36,8 +36,8 @@ import MFExample from "../MFExample.astro";
       lib2="images/tech/preact.svg"
       lib3="images/tech/preact.svg"
       integration="ESI, Web Components"
-      author="Michael Geers"
-      company="neuland - Büro für Informatik"
+      author="neuland - Büro für Informatik"
+      authorUrl="https://www.neuland-bfi.de"
       githubUrl="https://github.com/neuland/tractor-store-preact"
     />
 
@@ -48,8 +48,7 @@ import MFExample from "../MFExample.astro";
       lib2="images/tech/question.svg"
       lib3="images/tech/question.svg"
       integration="[...]"
-      author="you"
-      company="your company"
+      author="your company"
     />
   </div>
 </div>
@@ -76,7 +75,7 @@ import MFExample from "../MFExample.astro";
     display: grid;
     grid-template-columns: repeat(12, 1fr);
     gap: 1rem;
-    grid-column: 1 / 13;
+    grid-column: 1 / -1;
   }
   .examples > :global(*) {
     @media (max-width: 499px) {
@@ -87,7 +86,11 @@ import MFExample from "../MFExample.astro";
       grid-column: span 6;
     }
 
-    @media (min-width: 1000px) {
+    @media (min-width: 1000px) and (max-width: 1249px) {
+      grid-column: span 4;
+    }
+
+    @media (min-width: 1250px)  {
       grid-column: span 3;
     }
   }
