@@ -3,61 +3,66 @@
 
 <footer class="text-sm h-fit mt-4 pb-4 mb-12 leading-snug">
   <div class="divider"></div>
-  <img
-    src="images/neulandLogo.png"
-    alt="neuland BfI Logo"
-    typeof="foaf:Image"
-    class="mr-4 size-10 float-left"
-  />
-  <div class="mt-1 float-left">
-    <p>
-      the tractore store reference implementations <br />
-      a <a
-        class="bg-clip-text text-neuland"
-        href="https://www.neuland-bfi.de/"
+  <div class="footerContent">
+    <div class="credits">
+      <img
+        src="images/neulandLogo.png"
+        alt="neuland BfI Logo"
+        typeof="foaf:Image"
+        class="mr-4 size-10 float-left"
+      />
+      <div class="mt-1 float-left">
+        <p>
+          the tractore store reference implementations
+          a <a
+            class="text-neuland"
+            href="https://www.neuland-bfi.de/"
+            target="_blank"
+          >
+            neuland
+          </a> initiative
+        </p>
+        <p class="mt-2">
+          Need help with your project? <a
+            class="text-neuland"
+            href="mailto:microfrontends@neuland-bfi.de"
+          >
+            Get in contact.
+          </a>
+        </p>
+      </div>
+    </div>
+  
+    <div class="links">
+      <a
+        class="text-black"
+        href="https://www.neuland-bfi.de/impressum"
         target="_blank"
       >
-        neuland
-      </a> initiative
-    </p>
-    <p class="mt-2">
-      Need help with your project? <a
-        class="bg-clip-text text-neuland"
-        href="mailto:microfrontends@neuland-bfi.de"
+        legal notice
+      </a><br />
+      <a
+        class="text-black"
+        href="https://blueprint.the-tractor.store"
+        target="_blank"
       >
-        Get in contact.
+        blueprint project
+      </a><br />
+      <a
+        class="text-black"
+        href="https://micro-frontends.org/"
+        target="_blank"
+      >
+        micro-frontends.org
+      </a><br />
+      <a
+        class="text-black"
+        href={"https://www.manning.com/books/micro-frontends-in-action?a_aid=mfia&a_bid=5f09fdeb"}
+        target="_blank"
+      >
+        micro frontends in action book
       </a>
-    </p>
-  </div>
-  <div class="text-right">
-    <a
-      class="bg-clip-text text-black"
-      href="https://www.neuland-bfi.de/impressum"
-      target="_blank"
-    >
-      legal notice
-    </a><br />
-    <a
-      class="bg-clip-text text-black"
-      href="https://blueprint.the-tractor.store"
-      target="_blank"
-    >
-      blueprint project
-    </a><br />
-    <a
-      class="bg-clip-text text-black"
-      href="https://micro-frontends.org/"
-      target="_blank"
-    >
-      micro-frontends.org
-    </a><br />
-    <a
-      class="bg-clip-text text-black"
-      href={"https://www.manning.com/books/micro-frontends-in-action?a_aid=mfia&a_bid=5f09fdeb"}
-      target="_blank"
-    >
-      micro frontends in action book
-    </a>
+    </div>
   </div>
 </footer>
 
@@ -74,5 +79,28 @@
 
   :global(.dark) .divider {
     background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.35));
+  }
+
+  .footerContent {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 2rem;
+  }
+
+  .credits {
+    flex: 2;
+    display: flex;
+    min-width: 300px;
+    max-width: 420px;
+  }
+
+  .links {
+    text-align: right;
+    flex: 1;
+  }
+
+  .links a {
+    white-space: nowrap;
   }
 </style>
