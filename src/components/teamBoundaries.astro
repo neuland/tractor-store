@@ -1,30 +1,45 @@
 ---
+import { Image } from "astro:assets";
+import boundariesHome from "../images/boundaries/home.svg";
+import boundariesList from "../images/boundaries/list.svg";
+import boundariesDetail from "../images/boundaries/detail.svg";
+import boundariesCart from "../images/boundaries/cart.svg";
+import boundariesCheckout from "../images/boundaries/checkout.svg";
+import boundariesThankyou from "../images/boundaries/thankyou.svg";
 ---
 
 <section class="flex pt-4 pb-4 custom_shadow">
-    <div class="basis-1/3">
-      <p class="pb-2 text-xs text-neuland text-center bold">Team Explore</p>
-      <div class="flex">
-          <img src="images/boundaries/home.svg" typeof="foaf:Image" class="size-32 drop-shadow-lg" />
-          <img src="images/boundaries/list.svg" typeof="foaf:Image" class="size-32 drop-shadow-lg" />
-      </div>
+  <div class="basis-1/3">
+    <p class="pb-2 text-xs text-neuland text-center bold">Team Explore</p>
+    <div class="flex">
+      <Image src={boundariesHome} alt="Home" class="size-32 drop-shadow-lg" />
+      <Image src={boundariesList} alt="List" class="size-32 drop-shadow-lg" />
     </div>
-    <div class="basis-1/6">
-      <p class="pb-2 text-xs text-decide text-center bold">Team Decide</p>
-      <img src="images/boundaries/detail.svg" typeof="foaf:Image" class="size-32 drop-shadow-lg" />
+  </div>
+  <div class="basis-1/6">
+    <p class="pb-2 text-xs text-decide text-center bold">Team Decide</p>
+    <Image src={boundariesDetail} alt="Detail" class="size-32 drop-shadow-lg" />
+  </div>
+  <div class="basis-1/2">
+    <p class="pb-2 text-xs text-checkout text-center bold">Team Checkout</p>
+    <div class="flex">
+      <Image src={boundariesCart} alt="Cart" class="size-32 drop-shadow-lg" />
+      <Image
+        src={boundariesCheckout}
+        alt="Checkout"
+        class="size-32 drop-shadow-lg"
+      />
+      <Image
+        src={boundariesThankyou}
+        alt="Thank you"
+        class="size-32 drop-shadow-lg"
+      />
     </div>
-     <div class="basis-1/2">
-      <p class="pb-2 text-xs text-checkout text-center bold">Team Checkout</p>
-      <div class="flex">
-          <img src="images/boundaries/cart.svg" typeof="foaf:Image" class="size-32 drop-shadow-lg" />
-          <img src="images/boundaries/checkout.svg" typeof="foaf:Image" class="size-32 drop-shadow-lg" />
-          <img src="images/boundaries/thankyou.svg" typeof="foaf:Image" class="size-32 drop-shadow-lg" />
-      </div>
-    </div>
+  </div>
 </section>
 
 <style>
-    .custom_shadow {
-        filter: drop-shadow(0px 0px 50px rgba(255, 90, 85, 0.3));
-    }
+  .custom_shadow {
+    filter: drop-shadow(0px 0px 50px rgba(255, 90, 85, 0.3));
+  }
 </style>

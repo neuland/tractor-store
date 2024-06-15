@@ -1,12 +1,13 @@
 ---
 import DarkModeToggle from "./DarkModeToggle.astro";
+import { Image } from "astro:assets";
+import logo from "./../../public/images/logo.svg";
 ---
 
 <header class="">
-  <img
-    src="images/logo.svg"
+  <Image
+    src={logo}
     alt="Micro Frontends Tractor Store"
-    typeof="foaf:Image"
     class="w-64 mt-12 mb-6"
   />
   <div

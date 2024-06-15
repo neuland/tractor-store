@@ -1,5 +1,11 @@
 ---
-
+import { Image } from "astro:assets";
+import walkthrough from "../../../public/images/walkthrough.webp";
+import headerFooter from "../../../public/images/header_footer.webp";
+import recommendations from "../../../public/images/recommendations.webp";
+import cart from "../../../public/images/cart.webp";
+import storepicker from "../../../public/images/storepicker.webp";
+import confetti from "../../../public/images/confetti.webp";
 ---
 
 <div class="mb-8 pb-8 pt-10 c-background">
@@ -11,13 +17,7 @@
     </h3>
 
     <div class="useCase">
-      <img
-        src="images/walkthrough.webp"
-        class="image"
-        alt="project visualisation"
-        width="500"
-        loading="lazy"
-      />
+      <Image src={walkthrough} alt="walkthrough" class="image" />
 
       <div class="text">
         <h4 class="font-bold">Complete Online Shop</h4>
@@ -27,13 +27,7 @@
     </div>
 
     <div class="useCase">
-      <img
-        src="images/header_footer.webp"
-        class="image"
-        alt="possible tech stack visualisation"
-        width="500"
-        loading="lazy"
-      />
+      <Image src={headerFooter} alt="header and footer" class="image" />
       <div class="text">
         <h4 class="font-bold">Header &amp; Footer</h4>
         <p>
@@ -44,13 +38,7 @@
     </div>
 
     <div class="useCase">
-      <img
-        src="images/recommendations.webp"
-        class="image"
-        alt="recommendations"
-        width="500"
-        loading="lazy"
-      />
+      <Image src={recommendations} alt="recommendations" class="image" />
 
       <div class="text">
         <h4 class="font-bold">Recommendations</h4>
@@ -62,13 +50,7 @@
     </div>
 
     <div class="useCase">
-      <img
-        src="images/cart.webp"
-        class="image"
-        alt="possible tech stack visualisation"
-        width="500"
-        loading="lazy"
-      />
+      <Image src={cart} alt="cart" class="image" />
 
       <div class="text">
         <h4 class="font-bold">Shopping Cart</h4>
@@ -79,13 +61,7 @@
     </div>
 
     <div class="useCase">
-      <img
-        src="images/storepicker.webp"
-        alt="store picker"
-        width="500"
-        class="image"
-        loading="lazy"
-      />
+      <Image src={storepicker} alt="store picker" class="image" />
 
       <div class="text">
         <h4 class="font-bold">Forms example</h4>
@@ -96,13 +72,7 @@
     </div>
 
     <div class="useCase">
-      <img
-        src="images/confetti.webp"
-        alt="thank you confetti"
-        width="500"
-        class="image"
-        loading="lazy"
-      />
+      <Image src={confetti} alt="thank you confetti" class="image" />
 
       <div class="text">
         <h4 class="font-bold">Confirmation Confetti</h4>

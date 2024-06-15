@@ -1,15 +1,15 @@
 ---
-
+import { Image } from "astro:assets";
+import neulandLogo from "./../../public/images/neulandLogo.png";
 ---
 
 <footer class="text-sm h-fit mt-4 pb-4 mb-12 leading-snug">
   <div class="divider"></div>
   <div class="footerContent">
     <div class="credits">
-      <img
-        src="images/neulandLogo.png"
-        alt="neuland BfI Logo"
-        typeof="foaf:Image"
+      <Image
+        src={neulandLogo}
+        alt="neuland Büro für Informatik - Logo"
         class="mr-4 size-10 float-left"
       />
       <div class="mt-1 float-left">

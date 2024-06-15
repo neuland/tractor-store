@@ -13,6 +13,7 @@ const {
   liveUrl,
   contribute,
 } = Astro.props;
+import { Image } from "astro:assets";
 ---
 
 <section class="mfexample">
@@ -31,13 +32,13 @@ const {
 
   <div class="elements c_shadow">
     <div class="element vertical">
-      <img src={lib1} typeof="foaf:Image" class="m-auto size-6" />
+      <Image src={lib1} alt="lib1" class="m-auto size-6" />
     </div>
     <div class="element vertical">
-      <img src={lib2} typeof="foaf:Image" class="m-auto size-6" />
+      <Image src={lib2} alt="lib1" class="m-auto size-6" />
     </div>
     <div class="element vertical">
-      <img src={lib3} typeof="foaf:Image" class="m-auto size-6" />
+      <Image src={lib3} alt="lib1" class="m-auto size-6" />
     </div>
     <div class="element integration text-xs">
       {integration}
@@ -47,7 +48,7 @@ const {
   <div class="repository text-xs px-1">
     {
       author && (
-        <a class="author" href={authorUrl}  target="_blank">
+        <a class="author" href={authorUrl} target="_blank">
           <>
             <strong>by {author}</strong>
           </>
@@ -62,7 +63,7 @@ const {
       )
     }
     {
-     contribute && (
+      contribute && (
         <a class="contribute" href="#contribute">
           Share your approach
         </a>
@@ -98,7 +99,7 @@ const {
     border: 1px solid #ebeee2;
     display: grid;
     grid-template-rows: auto 1fr auto;
-    
+
     overflow: hidden;
     position: relative;
   }
@@ -191,12 +192,10 @@ const {
   }
 
   .liveUrl {
-
     @media screen and (min-width: 1000px) {
       justify-self: end;
     }
 
     grid-area: liveUrl;
-    
   }
 </style>

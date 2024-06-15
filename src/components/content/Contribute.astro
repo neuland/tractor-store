@@ -1,10 +1,11 @@
 ---
-
+import { Image } from "astro:assets";
+import contributeImg from "../../../public/images/contribute.svg";
 ---
 
 <section class="contribute" id="contribute">
   <div class="image">
-    <img src="images/contribute.svg" typeof="foaf:Image" />
+    <Image src={contributeImg} alt="Contribute" loading="lazy" />
   </div>
   <div class="text pt-12">
     <h3 class="font-bold text-text-heading text-2xl md:text-3xl pb-2">

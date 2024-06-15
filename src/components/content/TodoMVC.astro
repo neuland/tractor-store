@@ -1,13 +1,17 @@
 ---
 import Button from "../Button.astro";
+import { Image } from "astro:assets";
+import screen1 from "../../../public/images/screen1.svg";
+import screen2 from "../../../public/images/screen2.svg";
+import screen3 from "../../../public/images/screen3.svg";
 ---
 
 <section class="mb-8 c-background todomvc">
   <div class="max-w-6xl mx-auto px-6 py-10 sm:px-8">
     <div class="image">
-      <img src="images/screen1.svg" typeof="foaf:Image" />
-      <img src="images/screen2.svg" typeof="foaf:Image" />
-      <img src="images/screen3.svg" typeof="foaf:Image" />
+      <Image src={screen1} alt="screen1" />
+      <Image src={screen2} alt="screen2" />
+      <Image src={screen3} alt="screen3" />
     </div>
     <div class="text">
       <h3
@@ -29,16 +33,18 @@ import Button from "../Button.astro";
           real-world code and examples helps everyone involved to get a good
           understanding of your decisions and their implications.
         </p>
-        <p class="my-5">The Tractor Store aims to be to micro frontends what TodoMVC was to the advent of
-          JavaScript Frameworks in the late 2000s: An awesome collection of
-          different implementations for the same application. A valuable
-          learning resource for people new to this topic and also a good basis
-          for advanced discussions.
+        <p class="my-5">
+          The Tractor Store aims to be to micro frontends what TodoMVC was to
+          the advent of JavaScript Frameworks in the late 2000s: An awesome
+          collection of different implementations for the same application. A
+          valuable learning resource for people new to this topic and also a
+          good basis for advanced discussions.
         </p>
 
         <Button
           title="View Blueprint"
           href="https://blueprint.the-tractor.store/"
+          target="_blank"
         />
       </div>
     </div>

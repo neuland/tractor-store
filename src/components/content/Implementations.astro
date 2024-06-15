@@ -1,5 +1,8 @@
 ---
 import MFExample from "../MFExample.astro";
+import html from "./../../../public/images/tech/html.svg";
+import preact from "./../../../public/images/tech/preact.svg";
+import question from "./../../../public/images/tech/question.svg";
 ---
 
 <div class="root">
@@ -19,9 +22,9 @@ import MFExample from "../MFExample.astro";
     <MFExample
       title="Blueprint"
       rendering="Vanilla, no frameworks"
-      lib1="images/tech/html.svg"
-      lib2="images/tech/html.svg"
-      lib3="images/tech/html.svg"
+      lib1={html}
+      lib2={html}
+      lib3={html}
       integration="Modular Monolith"
       author="neuland - Büro für Informatik"
       authorUrl="https://www.neuland-bfi.de"
@@ -32,9 +35,9 @@ import MFExample from "../MFExample.astro";
     <MFExample
       title="Preact"
       rendering="Universal Rendering"
-      lib1="images/tech/preact.svg"
-      lib2="images/tech/preact.svg"
-      lib3="images/tech/preact.svg"
+      lib1={preact}
+      lib2={preact}
+      lib3={preact}
       integration="ESI, Web Components"
       author="neuland - Büro für Informatik"
       authorUrl="https://www.neuland-bfi.de"
@@ -44,9 +47,9 @@ import MFExample from "../MFExample.astro";
     <MFExample
       title="Your Implementation ..."
       rendering="[description]"
-      lib1="images/tech/question.svg"
-      lib2="images/tech/question.svg"
-      lib3="images/tech/question.svg"
+      lib1={question}
+      lib2={question}
+      lib3={question}
       integration="[integration techniques]"
       author="[author]"
       contribute
@@ -91,7 +94,7 @@ import MFExample from "../MFExample.astro";
       grid-column: span 4;
     }
 
-    @media (min-width: 1250px)  {
+    @media (min-width: 1250px) {
       grid-column: span 3;
     }
   }

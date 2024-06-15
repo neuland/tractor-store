@@ -1,4 +1,14 @@
 ---
+import { Image } from "astro:assets";
+import heroImg from "../../../public/images/hero.svg";
+import reactLogo from "../../../public/images/tech/react.svg";
+import vueLogo from "../../../public/images/tech/vue.svg";
+import angularLogo from "../../../public/images/tech/angular.svg";
+import preactLogo from "../../../public/images/tech/preact.svg";
+import solidLogo from "../../../public/images/tech/solid.svg";
+import htmxLogo from "../../../public/images/tech/htmx.svg";
+import jsLogo from "../../../public/images/tech/js.svg";
+import qwikLogo from "../../../public/images/tech/qwik.svg";
 ---
 
 <section class="intro">
@@ -18,102 +28,39 @@
     </p>
   </div>
   <div class="imageWrapper">
-    <img
+    <Image
       class="image"
-      src="images/hero.svg"
+      src={heroImg}
       alt="illustration of a micro frontend setup consisting of three vertical boxes on one horiziontal box"
     />
     <div class="logos logos-1">
-      <img
-        src="images/tech/react.svg"
-        alt="illustration of a micro frontend setup consisting of three vertical boxes on one horiziontal box"
-      />
-      <img
-        src="images/tech/vue.svg"
-        alt="illustration of a micro frontend setup consisting of three vertical boxes on one horiziontal box"
-      />
-      <img
-        src="images/tech/angular.svg"
-        alt="illustration of a micro frontend setup consisting of three vertical boxes on one horiziontal box"
-      />
-      <img
-        src="images/tech/preact.svg"
-        alt="illustration of a micro frontend setup consisting of three vertical boxes on one horiziontal box"
-      />
-      <img
-        src="images/tech/react.svg"
-        alt="illustration of a micro frontend setup consisting of three vertical boxes on one horiziontal box"
-      />
-      <img
-        src="images/tech/solid.svg"
-        alt="illustration of a micro frontend setup consisting of three vertical boxes on one horiziontal box"
-      />
-      <img
-        src="images/tech/htmx.svg"
-        alt="illustration of a micro frontend setup consisting of three vertical boxes on one horiziontal box"
-      />
+      <Image src={reactLogo} alt="React logo" />
+      <Image src={vueLogo} alt="Vue logo" />
+      <Image src={angularLogo} alt="Angular logo" />
+      <Image src={preactLogo} alt="Preact logo" />
+      <Image src={reactLogo} alt="React logo" />
+      <Image src={solidLogo} alt="Solid logo" />
+      <Image src={htmxLogo} alt="HTMX logo" />
     </div>
 
     <div class="logos logos-2">
-      <img
-        src="images/tech/react.svg"
-        alt="illustration of a micro frontend setup consisting of three vertical boxes on one horiziontal box"
-      />
-      <img
-        src="images/tech/vue.svg"
-        alt="illustration of a micro frontend setup consisting of three vertical boxes on one horiziontal box"
-      />
-      <img
-        src="images/tech/angular.svg"
-        alt="illustration of a micro frontend setup consisting of three vertical boxes on one horiziontal box"
-      />
-      <img
-        src="images/tech/preact.svg"
-        alt="illustration of a micro frontend setup consisting of three vertical boxes on one horiziontal box"
-      />
-      <img
-        src="images/tech/solid.svg"
-        alt="illustration of a micro frontend setup consisting of three vertical boxes on one horiziontal box"
-      />
-      <img
-        src="images/tech/solid.svg"
-        alt="illustration of a micro frontend setup consisting of three vertical boxes on one horiziontal box"
-      />
-      <img
-        src="images/tech/js.svg"
-        alt="illustration of a micro frontend setup consisting of three vertical boxes on one horiziontal box"
-      />
+      <Image src={reactLogo} alt="React logo" />
+      <Image src={vueLogo} alt="Vue logo" />
+      <Image src={angularLogo} alt="Angular logo" />
+      <Image src={preactLogo} alt="Preact logo" />
+      <Image src={solidLogo} alt="Solid logo" />
+      <Image src={solidLogo} alt="Solid logo" />
+      <Image src={jsLogo} alt="JavaScript logo" />
     </div>
 
     <div class="logos logos-3">
-      <img
-        src="images/tech/react.svg"
-        alt="illustration of a micro frontend setup consisting of three vertical boxes on one horiziontal box"
-      />
-      <img
-        src="images/tech/vue.svg"
-        alt="illustration of a micro frontend setup consisting of three vertical boxes on one horiziontal box"
-      />
-      <img
-        src="images/tech/angular.svg"
-        alt="illustration of a micro frontend setup consisting of three vertical boxes on one horiziontal box"
-      />
-      <img
-        src="images/tech/preact.svg"
-        alt="illustration of a micro frontend setup consisting of three vertical boxes on one horiziontal box"
-      />
-      <img
-        src="images/tech/react.svg"
-        alt="illustration of a micro frontend setup consisting of three vertical boxes on one horiziontal box"
-      />
-      <img
-        src="images/tech/react.svg"
-        alt="illustration of a micro frontend setup consisting of three vertical boxes on one horiziontal box"
-      />
-      <img
-        src="images/tech/qwik.svg"
-        alt="illustration of a micro frontend setup consisting of three vertical boxes on one horiziontal box"
-      />
+      <Image src={reactLogo} alt="React logo" />
+      <Image src={vueLogo} alt="Vue logo" />
+      <Image src={angularLogo} alt="Angular logo" />
+      <Image src={preactLogo} alt="Preact logo" />
+      <Image src={reactLogo} alt="React logo" />
+      <Image src={reactLogo} alt="React logo" />
+      <Image src={qwikLogo} alt="Qwik logo" />
     </div>
   </div>
 </section>

@@ -1,4 +1,11 @@
 ---
+import { Image } from "astro:assets";
+import stackCombinations from "../../../public/images/differences/stackCombinations.svg";
+import shell from "../../../public/images/differences/shell.svg";
+import rendering from "../../../public/images/differences/rendering.svg";
+import communication from "../../../public/images/differences/communication.svg";
+import deployment from "../../../public/images/differences/deployment.svg";
+import shared from "../../../public/images/differences/shared.svg";
 ---
 
 <div class="mb-8">
@@ -9,10 +16,11 @@
   </h3>
   <ul class="challenges unset">
     <li class="challenge">
-      <img
-        src="images/differences/stackCombinations.svg"
+      <Image
+        src={stackCombinations}
         typeof="foaf:Image"
         class="mb-5"
+        alt="Technology stack combinations"
       />
       <div class="text">
         <div class="pl-2">
@@ -27,10 +35,11 @@
       </div>
     </li>
     <li class="challenge">
-      <img
-        src="images/differences/shell.svg"
+      <Image
+        src={shell}
         typeof="foaf:Image"
         class="mb-5"
+        alt="Shell or no shell"
       />
       <div class="text">
         <div class="pl-2">
@@ -45,10 +54,11 @@
       </div>
     </li>
     <li class="challenge">
-      <img
-        src="images/differences/rendering.svg"
+      <Image
+        src={rendering}
         typeof="foaf:Image"
         class="mb-5"
+        alt="Server or client rendered"
       />
       <div class="text">
         <div class="pl-2">
@@ -62,10 +72,11 @@
       </div>
     </li>
     <li class="challenge">
-      <img
-        src="images/differences/communication.svg"
+      <Image
+        src={communication}
         typeof="foaf:Image"
         class="mb-5"
+        alt="Communication patterns"
       />
       <div class="text">
         <div class="pl-2">
@@ -79,10 +90,11 @@
       </div>
     </li>
     <li class="challenge">
-      <img
-        src="images/differences/deployment.svg"
+      <Image
+        src={deployment}
         typeof="foaf:Image"
         class="mb-5"
+        alt="Deployment technique"
       />
       <div class="text">
         <div class="pl-2">
@@ -99,10 +111,11 @@
       </div>
     </li>
     <li class="challenge">
-      <img
-        src="images/differences/shared.svg"
+      <Image
+        src={shared}
         typeof="foaf:Image"
         class="mb-5"
+        alt="Shared UI components"
       />
       <div class="text">
         <div class="pl-2">

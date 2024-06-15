@@ -26,6 +26,9 @@ let BASE_URL = LOCALHOST_URL;
 if (isBuild) {
   BASE_URL = LIVE_URL;
 }
+const assetsPrefix = isBuild
+  ? "https://neuland.github.io/tractor-store/"
+  : undefined;
 
 export default defineConfig({
   server: { port: SERVER_PORT },
@@ -39,4 +42,5 @@ export default defineConfig({
       config: { applyBaseStyles: false },
     }),
   ],
+  build: { assetsPrefix },
 });
