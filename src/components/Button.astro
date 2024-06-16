@@ -1,10 +1,11 @@
 ---
-const { title, variant = "primary", href } = Astro.props;
+const { title, variant = "primary", href, target } = Astro.props;
 ---
 
 <a
   class=`unset mt-2 mb-2 mx-auto c_Button c_Button--${variant} c_Button--size-normal`
   href={href}
+  target={target}
 >
   <span class="c_Button__inner">{title}</span>
 </a>
@@ -29,11 +30,12 @@ const { title, variant = "primary", href } = Astro.props;
     border: 0;
     background: linear-gradient(
         180deg,
-        rgba(0, 0, 0,0.4),
+        rgba(0, 0, 0, 0.4),
         var(--background-color, rgb(255, 255, 255))
       ),
       var(--accent-color);
-    box-shadow: 0 -2px 3px rgb(229, 229, 229),
+    box-shadow:
+      0 -2px 3px rgb(229, 229, 229),
       0 2px 3px 3px var(--background-color, rgb(255, 255, 255)),
       0 0 25px rgba(0, 0, 0, 0.1),
       0 -10px 5px var(--background-color, rgb(255, 255, 255)) inset;
@@ -107,7 +109,10 @@ const { title, variant = "primary", href } = Astro.props;
     content: "";
     box-shadow: 0 2px 1px -1px rgba(0, 0, 0, 0.1);
     display: block;
-    transition: transform 0.3s, box-shadow 0.3s, background 0.1s 0.2s;
+    transition:
+      transform 0.3s,
+      box-shadow 0.3s,
+      background 0.1s 0.2s;
   }
 
   .c_Button__inner {
@@ -119,7 +124,10 @@ const { title, variant = "primary", href } = Astro.props;
     border-radius: inherit;
     display: grid;
     place-content: center;
-    transition: transform 0.3s, background 0.3s, box-shadow 0.3s;
+    transition:
+      transform 0.3s,
+      background 0.3s,
+      box-shadow 0.3s;
     -webkit-user-select: none; /* Safari */
     -ms-user-select: none; /* IE 10 and IE 11 */
     user-select: none;
@@ -135,10 +143,13 @@ const { title, variant = "primary", href } = Astro.props;
   .c_Button:active::before {
     background: linear-gradient(0deg, rgba(0, 0, 0, 0.09), rgba(0, 0, 0, 0.16)),
       var(--accent-color);
-    box-shadow: 0 0 3px rgba(0, 0, 0, 0.6) inset,
+    box-shadow:
+      0 0 3px rgba(0, 0, 0, 0.6) inset,
       0 2px 1px -1px rgba(0, 0, 0, 0.1);
     transform: scale(0.97);
-    transition: all 0.1s, background 0.05s;
+    transition:
+      all 0.1s,
+      background 0.05s;
   }
 
   .c_Button:active .c_Button__inner {
@@ -146,7 +157,8 @@ const { title, variant = "primary", href } = Astro.props;
     background: linear-gradient(0deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),
       var(--accent-color);
     transition: all 0.1s;
-    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2) inset,
+    box-shadow:
+      0 5px 5px rgba(0, 0, 0, 0.2) inset,
       0 -3px 3px rgba(255, 255, 255, 0.2) inset;
   }
 </style>
