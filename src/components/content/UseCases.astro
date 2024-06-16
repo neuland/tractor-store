@@ -1,5 +1,6 @@
 ---
 import { Image } from "astro:assets";
+import boundaryToggle from "../../../public/images/boundary_toggle.webp";
 import walkthrough from "../../../public/images/walkthrough.webp";
 import headerFooter from "../../../public/images/header_footer.webp";
 import recommendations from "../../../public/images/recommendations.webp";
@@ -15,6 +16,17 @@ import confetti from "../../../public/images/confetti.webp";
     >
       Features
     </h3>
+
+    <div class="useCase">
+      <Image src={boundaryToggle} alt="boundary toggle" class="image" />
+      <div class="text">
+        <h4 class="font-bold">Boundary Toggle</h4>
+        <p>
+          Boundaries can be toggled off and on. Use the application like an
+          end-user or switch on boundaries to see feature-ownership.
+        </p>
+      </div>
+    </div>
 
     <div class="useCase">
       <Image src={walkthrough} alt="walkthrough" class="image" />
@@ -54,9 +66,7 @@ import confetti from "../../../public/images/confetti.webp";
 
       <div class="text">
         <h4 class="font-bold">Shopping Cart</h4>
-        <p class="md:text-right">
-          Add and remove tractors. Minicart updates accordingly.
-        </p>
+        <p>Add and remove tractors. Minicart updates accordingly.</p>
       </div>
     </div>
 
@@ -65,7 +75,7 @@ import confetti from "../../../public/images/confetti.webp";
 
       <div class="text">
         <h4 class="font-bold">Forms example</h4>
-        <p class="md:text-left">
+        <p class="md:text-right">
           Checkout address form with embedded store picker owned by explore.
         </p>
       </div>
@@ -76,7 +86,7 @@ import confetti from "../../../public/images/confetti.webp";
 
       <div class="text">
         <h4 class="font-bold">Confirmation Confetti</h4>
-        <p class="md:text-right">
+        <p class="md:text-left">
           Celebration on success. External dependency powered.
         </p>
       </div>
