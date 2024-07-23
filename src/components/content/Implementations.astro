@@ -2,6 +2,7 @@
 import MFExample from "../MFExample.astro";
 import html from "./../../../public/images/tech/html.svg";
 import preact from "./../../../public/images/tech/preact.svg";
+import react from "./../../../public/images/tech/react.svg";
 import question from "./../../../public/images/tech/question.svg";
 ---
 
@@ -21,7 +22,7 @@ import question from "./../../../public/images/tech/question.svg";
   <div class="examples">
     <MFExample
       title="Blueprint"
-      rendering="Vanilla, no frameworks"
+      rendering="vanilla, no frameworks"
       lib1={html}
       lib2={html}
       lib3={html}
@@ -34,7 +35,7 @@ import question from "./../../../public/images/tech/question.svg";
 
     <MFExample
       title="Preact"
-      rendering="Universal Rendering"
+      rendering="universal rendering"
       lib1={preact}
       lib2={preact}
       lib3={preact}
@@ -42,6 +43,32 @@ import question from "./../../../public/images/tech/question.svg";
       author="neuland - Büro für Informatik"
       authorUrl="https://www.neuland-bfi.de"
       githubUrl="https://github.com/neuland/tractor-store-preact"
+    />
+
+    <MFExample
+      title="Piral & React"
+      rendering="SPA, app shell"
+      lib1={react}
+      lib2={react}
+      lib3={react}
+      integration="Piral"
+      author="smapiot"
+      authorUrl="https://smapiot.com/"
+      githubUrl="https://github.com/piral-samples/tractor-v2"
+      liveUrl="https://tractor-v2.samples.piral.cloud"
+    />
+
+    <MFExample
+      title="Picard.js & Preact"
+      rendering="SPA, Native Federation"
+      lib1={preact}
+      lib2={preact}
+      lib3={preact}
+      integration="Picard.js"
+      author="smapiot"
+      authorUrl="https://smapiot.com/"
+      githubUrl="https://github.com/picardjs/picard/tree/develop/examples/13-spa-tractor-v2-full"
+      liveUrl="https://picard-tractor.munichjs.org"
     />
 
     <MFExample

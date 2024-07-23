@@ -1,33 +1,51 @@
 ---
+import presentation from "../../public/images/presentation.webp";
+import Image from "astro/components/Image.astro";
 ---
 
-<section class="mb-8">
-  <div class="max-w-6xl mx-auto px-6 sm:px-8 md:flex items-center">
-    <div class="md:basis-1/2 md:pl-6">
+<section class="mt-8 pt-5">
+  <div class="max-w-6xl mx-auto px-6 sm:px-0 md:flex">
+    <div class="md:basis-1/2">
       <h3
-          class="font-bold text-text-heading text-2xl md:text-3xl pt-4 pb-2 w-fit overflow-hidden"
+        class="font-bold text-text-heading text-2xl md:text-3xl pb-2 w-fit overflow-hidden"
       >
-        Presentation
+        Watch the Presentation
       </h3>
-       <p class="mb-5">
-          Learn even more about micro frontends from
-           <a
-            class="bg-clip-text text-neuland"
-            href={"https://speakerdeck.com/naltatis/tractor-store-2-dot-0"}
-            target="_blank"
-            >
-            this presentation</a><br>
-          first shown at the Micro Frontends Conference 2024
-        </p>
+      <p class="mb-5 me-8">
+        Learn more about the ideas behind the Tractor Store 2.0 by watching
+        <a
+          class="bg-clip-text text-neuland"
+          href="https://www.youtube.com/watch?v=12TN7Zq7VxM&t=132s"
+          target="_blank"
+        >
+          Michael's presentation</a
+        > at the <a
+          href="https://conference.microfrontends.cloud/2024"
+          target="_blank">Micro Frontends Conference 2024</a
+        >. Slides are available on <a
+          class="bg-clip-text text-neuland"
+          href="https://speakerdeck.com/naltatis/tractor-store-2-dot-0"
+          target="_blank">Speaker Deck</a
+        >.
+      </p>
     </div>
     <div class="md:basis-1/2 place-content-center">
-      <img
-          src="images/presentation.svg"
-          typeof="foaf:Image"
-          class="lg:size-72 size-52 m-auto"
-      />
+      <a
+        href="https://www.youtube.com/watch?v=12TN7Zq7VxM&t=132s"
+        target="_blank"
+      >
+        <Image
+          src={presentation}
+          alt="Micro Frontends Conference 2024"
+          class="presentation"
+        />
+      </a>
     </div>
   </div>
 </section>
 
-<style></style>
+<style>
+  .presentation {
+    box-shadow: 0 7px 25px rgba(0, 0, 0, 0.15);
+  }
+</style>
