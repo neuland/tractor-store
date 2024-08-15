@@ -25,25 +25,27 @@ import { Image } from "astro:assets";
     ) : null
   }
 
-  <p class="pb-3 px-1 text-xs">
-    <strong>{title}</strong><br />
-    {rendering}
-  </p>
+  <a href={githubUrl} class="bigLink" target="_blank">
+    <p class="pb-3 px-1 text-xs">
+      <strong>{title}</strong><br />
+      {rendering}
+    </p>
 
-  <div class="elements c_shadow">
-    <div class="element vertical">
-      <Image src={lib1} alt="lib1" class="m-auto size-6" />
+    <div class="elements c_shadow">
+      <div class="element vertical">
+        <Image src={lib1} alt="lib1" class="m-auto size-6" />
+      </div>
+      <div class="element vertical">
+        <Image src={lib2} alt="lib1" class="m-auto size-6" />
+      </div>
+      <div class="element vertical">
+        <Image src={lib3} alt="lib1" class="m-auto size-6" />
+      </div>
+      <div class="element integration text-xs">
+        {integration}
+      </div>
     </div>
-    <div class="element vertical">
-      <Image src={lib2} alt="lib1" class="m-auto size-6" />
-    </div>
-    <div class="element vertical">
-      <Image src={lib3} alt="lib1" class="m-auto size-6" />
-    </div>
-    <div class="element integration text-xs">
-      {integration}
-    </div>
-  </div>
+  </a>
 
   <div class="repository text-xs px-1">
     {
@@ -197,5 +199,11 @@ import { Image } from "astro:assets";
     }
 
     grid-area: liveUrl;
+  }
+  .bigLink,
+  .bigLink:hover {
+    text-decoration: none;
+    display: block;
+    color: inherit;
   }
 </style>

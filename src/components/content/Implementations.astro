@@ -3,6 +3,9 @@ import MFExample from "../MFExample.astro";
 import html from "./../../../public/images/tech/html.svg";
 import preact from "./../../../public/images/tech/preact.svg";
 import react from "./../../../public/images/tech/react.svg";
+import vite from "./../../../public/images/tech/vite.svg";
+import webpack from "./../../../public/images/tech/webpack.svg";
+import rspack from "./../../../public/images/tech/rspack.svg";
 import question from "./../../../public/images/tech/question.svg";
 ---
 
@@ -22,7 +25,7 @@ import question from "./../../../public/images/tech/question.svg";
   <div class="examples">
     <MFExample
       title="Blueprint"
-      rendering="vanilla, no frameworks"
+      rendering="no frameworks, server-only"
       lib1={html}
       lib2={html}
       lib3={html}
@@ -35,7 +38,7 @@ import question from "./../../../public/images/tech/question.svg";
 
     <MFExample
       title="Preact"
-      rendering="universal rendering"
+      rendering="MPA (three SPAs), universal"
       lib1={preact}
       lib2={preact}
       lib3={preact}
@@ -47,7 +50,7 @@ import question from "./../../../public/images/tech/question.svg";
 
     <MFExample
       title="Piral & React"
-      rendering="SPA, app shell"
+      rendering="app shell (three SPAs), client-only"
       lib1={react}
       lib2={react}
       lib3={react}
@@ -60,11 +63,11 @@ import question from "./../../../public/images/tech/question.svg";
 
     <MFExample
       title="Picard.js & Preact"
-      rendering="SPA, Native Federation"
+      rendering="app shell (three SPAs), client-only"
       lib1={preact}
       lib2={preact}
       lib3={preact}
-      integration="Picard.js"
+      integration="Picard.js, Native Federation"
       author="smapiot"
       authorUrl="https://smapiot.com/"
       githubUrl="https://github.com/picardjs/picard/tree/develop/examples/13-spa-tractor-v2-full"
@@ -72,8 +75,34 @@ import question from "./../../../public/images/tech/question.svg";
     />
 
     <MFExample
+      title="Webpack & React"
+      rendering="app shell (three SPAs), client-only"
+      lib1={react}
+      lib2={react}
+      lib3={react}
+      integration="Module Federation"
+      author="Kent.Li"
+      authorUrl="https://github.com/teabyii"
+      githubUrl="https://github.com/teabyii/tractor-store-react"
+      liveUrl="https://tractor-store-react.pages.dev"
+    />
+
+    <MFExample
+      title="Webpack, Vite & Rspack"
+      rendering="app shell (three SPAs), client-only"
+      lib1={webpack}
+      lib2={vite}
+      lib3={rspack}
+      integration="Module Federation"
+      author="smapiot"
+      authorUrl="https://smapiot.com/"
+      githubUrl="https://github.com/FlorianRappl/module-federation-tractor-v2"
+      liveUrl="https://module-federation-tractor-v2.florian-rappl.de"
+    />
+
+    <MFExample
       title="Your Implementation ..."
-      rendering="[description]"
+      rendering="[rendering approach]"
       lib1={question}
       lib2={question}
       lib3={question}
