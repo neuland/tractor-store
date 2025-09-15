@@ -104,13 +104,24 @@ import qwikLogo from "../../../public/images/tech/qwik.svg";
 
   .image {
     @media (max-width: 999px) {
-      filter: drop-shadow(-30px -10px 50px rgba(255, 90, 85, 0.53));
+      filter: drop-shadow(-20px -8px 40px rgba(255, 90, 85, 0.5));
     }
 
     @media (min-width: 1000px) {
-      filter: drop-shadow(-30px -10px 100px rgba(255, 90, 85, 0.33));
+      filter: drop-shadow(-20px -8px 60px rgba(255, 90, 85, 0.35));
     }
     transform: translateZ(0);
+    will-change: transform;
+  }
+
+  :global(.dark) .image {
+    @media (max-width: 999px) {
+      filter: drop-shadow(-20px -8px 40px rgba(255, 90, 85, 0.8));
+    }
+
+    @media (min-width: 1000px) {
+      filter: drop-shadow(-20px -8px 60px rgba(255, 90, 85, 0.6));
+    }
     width: 100%;
   }
 

@@ -155,18 +155,16 @@ import { Image } from "astro:assets";
   }
 
   .c_shadow {
-    filter: drop-shadow(-3px -3px 3px rgba(255, 255, 255, 0.4))
-      drop-shadow(2px 3px 2px #edcdcd) drop-shadow(3px 6px 4px #edcdcd)
-      drop-shadow(4px 9px 6px #edcdcd)
-      drop-shadow(0px 4px 40px rgba(255, 90, 85, 0.3));
+    filter: drop-shadow(2px 4px 8px rgba(237, 205, 205, 0.8))
+           drop-shadow(0px 8px 32px rgba(255, 90, 85, 0.25));
+    will-change: transform;
     transform: translateZ(0);
   }
 
   :global(.dark) .c_shadow {
-    filter: drop-shadow(-3px -3px 3px rgba(255, 255, 255, 0.1))
-      drop-shadow(2px 3px 2px #322030) drop-shadow(3px 6px 4px #322030)
-      drop-shadow(4px 9px 6px #322030)
-      drop-shadow(0px 4px 40px rgba(255, 90, 85, 0.3));
+    filter: drop-shadow(2px 4px 8px rgba(50, 32, 48, 0.8))
+           drop-shadow(0px 8px 32px rgba(255, 90, 85, 0.25));
+    will-change: transform;
     transform: translateZ(0);
   }
 

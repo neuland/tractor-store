@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+  overflow-x: hidden;
+}
+
 /* 
     Tailwind colors listed here: https://tailwindcss.com/docs/customizing-colors
     
