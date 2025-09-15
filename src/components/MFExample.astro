@@ -10,6 +10,7 @@ const {
   author,
   authorUrl,
   githubUrl,
+  blogUrl,
   liveUrl,
   contribute,
 } = Astro.props;
@@ -57,27 +58,36 @@ import { Image } from "astro:assets";
         </a>
       )
     }
-    {
-      githubUrl && (
-        <a class="githubUrl" href={githubUrl} target="_blank">
-          GitHub
-        </a>
-      )
-    }
-    {
-      contribute && (
-        <a class="contribute" href="#contribute">
-          Share your approach
-        </a>
-      )
-    }
-    {
-      liveUrl && (
-        <a class="liveUrl" href={liveUrl}>
-          Live Demo
-        </a>
-      )
-    }
+    <div class="urls">
+      {
+        githubUrl && (
+          <a class="githubUrl" href={githubUrl} target="_blank">
+            GitHub
+          </a>
+        )
+      }
+      {
+        blogUrl && (
+          <a class="blogUrl" href={blogUrl} target="_blank">
+            Blog
+          </a>
+        )
+      }
+      {
+        contribute && (
+          <a class="contribute" href="#contribute">
+            Share your approach
+          </a>
+        )
+      }
+      {
+        liveUrl && (
+          <a class="liveUrl" href={liveUrl}>
+            Live Demo
+          </a>
+        )
+      }
+    </div>
   </div>
 </section>
 
@@ -161,49 +171,24 @@ import { Image } from "astro:assets";
   }
 
   .repository {
-    @media (max-width: 999px) {
-      grid-template:
-        "author" auto
-        "githubUrl" auto
-        "liveUrl" auto / 1fr;
-    }
-
-    @media screen and (min-width: 1000px) {
-      grid-template:
-        "author author" auto
-        "githubUrl liveUrl" auto / 1fr 1fr;
-    }
-
     margin-top: 1rem;
-    display: grid;
-    gap: 0.5rem;
   }
 
   a.author {
-    grid-area: author;
+    display: block;
     text-decoration: none;
+    margin-bottom: 0.5rem;
   }
 
-  .githubUrl {
-    grid-area: githubUrl;
-    justify-self: start;
-  }
-
-  .contribute {
-    grid-column: 1 / 3;
-  }
-
-  .liveUrl {
-    @media screen and (min-width: 1000px) {
-      justify-self: end;
-    }
-
-    grid-area: liveUrl;
-  }
   .bigLink,
   .bigLink:hover {
     text-decoration: none;
     display: block;
     color: inherit;
+  }
+  .urls {
+    display: flex;
+    justify-content: space-between;
+    gap: 0.5rem;
   }
 </style>
